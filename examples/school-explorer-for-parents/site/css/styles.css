@@ -39,14 +39,14 @@ h1 { grid-area: title; }
   height: 100%;
 }
 
-#school-list {
+.school-list {
   list-style: none;
   margin: 0 0 0 -1rem;
   padding: 0;
   overflow-y: scroll;
 }
 
-#school-list li {
+.school-list li {
   margin: 0.25rem 0;
   padding: 1rem;
   cursor: pointer;
@@ -115,6 +115,24 @@ label {
   padding: 0.5rem;
   margin-top: 0.5rem;
   width: 100%;
+}
+
+.address-options {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.address-options li {
+  border: 1px solid black;
+  border-width: 0 1px 1px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.address-options li:hover {
+  background-color: #eee;
+  cursor: pointer;
 }
 
 .highlighted {
