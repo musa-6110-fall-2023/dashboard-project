@@ -1,3 +1,3 @@
-import { initializeMap } from "./school-map";
+import { initializeMap } from './school-map.js';
 
 initializeMap();
