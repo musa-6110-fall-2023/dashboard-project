@@ -42,3 +42,7 @@ main {
     padding: 0.2rem;
     background-color: #eee;
 }
+
+.school-list li {
+    margin: lrem 0.5rem;
+}
