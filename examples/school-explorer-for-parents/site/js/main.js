@@ -1,6 +1,7 @@
 import { initializeSchoolMap } from './school-map.js';
 import { initializeSchoolList } from './school-list.js';
 import { initializeCountDisplay } from './school-count.js';
+import { initializeAddressEntry } from './address-entry.js';
 import { setupFilterEvents } from './school-filters.js';
 
 
@@ -16,6 +17,7 @@ const eventBus = new EventTarget();
 const schoolMap = initializeSchoolMap(schools, eventBus);
 const schoolList = initializeSchoolList(schools, eventBus);
 const schoolCountDisplay = initializeCountDisplay(schools, eventBus);
+const addressEntry = initializeAddressEntry(catchments, eventBus);
 setupFilterEvents(schools, eventBus);
 
 // Make these variables globally available.
@@ -23,4 +25,5 @@ window.schools = schools;
 window.catchments = catchments;
 window.schoolMap = schoolMap;
 window.schoolList = schoolList;
+window.addressEntry = addressEntry;
 window.schoolCountDisplay = schoolCountDisplay;

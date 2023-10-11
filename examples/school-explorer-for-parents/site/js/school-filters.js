@@ -1,9 +1,13 @@
+/* globals turf */
+
 const gradeCheckboxes = document.querySelectorAll('[name="school-filter-grade"]');
 const admissionCheckboxes = document.querySelectorAll('[name="school-filter-admission"]');
 const nameSubstringInput = document.querySelector('[name="school-filter-name"]');
 
 window.schoolNameFilter = nameSubstringInput;
 window.schoolGradeFilters = gradeCheckboxes;
+
+let currentCatchment = null;
 
 function shouldShowSchool(school) {
   const filterGrades = Array.from(gradeCheckboxes)
@@ -28,6 +32,11 @@ function shouldShowSchool(school) {
     return false;
   }
 
+  if (school['Admission Type'] === 'Neighborhood' && currentCatchment &&
+      !turf.booleanPointInPolygon(school.geom.coordinates, currentCatchment)) {
+    return false;
+  }
+
   return true;
 }
 
@@ -47,6 +56,12 @@ function setupFilterEvents(allSchools, eventBus) {
       updateShownSchools(allSchools, eventBus);
     });
   }
+
+  eventBus.addEventListener('addresschanged', (evt) => {
+    const { catchment } = evt.detail;
+    currentCatchment = catchment;
+    updateShownSchools(allSchools, eventBus);
+  });
 }
 
 export {

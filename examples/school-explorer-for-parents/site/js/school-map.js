@@ -6,7 +6,10 @@ function initializeSchoolMap(schools, eventBus) {
     attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
   }).addTo(schoolMap);
 
-  schoolMap.dataLayer = L.layerGroup().addTo(schoolMap);
+  schoolMap.catchmentPane = schoolMap.createPane('catchmentPane');
+  schoolMap.catchmentPane.style.zIndex = 300;
+
+  schoolMap.userAddressLayer = L.layerGroup().addTo(schoolMap);
   schoolMap.highlightedIDs = new Set();
   schoolMap.schoolLayers = {};
   schoolMap.eventBus = eventBus;
@@ -27,6 +30,11 @@ function setupMapEventHandlers(map) {
   map.eventBus.addEventListener('filterschanged', (evt) => {
     const { include } = evt.detail;
     showSchoolsOnMap(include, map);
+  });
+
+  map.eventBus.addEventListener('addresschanged', (evt) => {
+    const { place, catchment } = evt.detail;
+    showUserAddressOnMap(place, catchment, map);
   });
 }
 
@@ -139,6 +147,20 @@ function showSchoolsOnMap(schools, map) {
   }
 
   redrawSchoolsOnMap(schools, map);
+}
+
+function showUserAddressOnMap(place, catchment, map) {
+  map.userAddressLayer.clearLayers();
+
+  if (catchment) {
+    L.geoJSON(catchment, { pane: 'catchmentPane', style: { color: 'gray', weight: 1 }})
+      .addTo(map.userAddressLayer);
+  }
+
+  if (place) {
+    L.geoJSON(place)
+      .addTo(map.userAddressLayer);
+  }
 }
 
 export {
