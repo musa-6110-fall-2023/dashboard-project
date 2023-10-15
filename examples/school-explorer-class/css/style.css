@@ -1,5 +1,5 @@
 html {
-    font:
+    font-family: sans-serif;
 }
 
 main {
@@ -44,5 +44,10 @@ main {
 }
 
 .school-list li {
-    margin: lrem 0.5rem;
+    margin: 1rem 0.5rem;
+}
+
+.address-choices li:hover {
+    background-color: #eee;
+    cursor: pointer;
 }

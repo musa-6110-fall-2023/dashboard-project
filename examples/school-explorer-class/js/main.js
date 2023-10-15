@@ -6,9 +6,10 @@ import { initializeAddressEntry } from './address-entry.js';
 const schoolsResp = await fetch('data/schools.json');
 const schools = await schoolsResp.json();
 
-window.map = initializeMap(schools);
-initializeList(schools);
-initializeAddressEntry(schools);
+window.schools = schools;
+window.schoolMap = initializeMap(schools);
+window.schoolList = initializeList(schools);
+initializeAddressEntry();
 
 // what is done when use await fetch, same thing as above
 // const promise1 = fetch('data/schools.json');
