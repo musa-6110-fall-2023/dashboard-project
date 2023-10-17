@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- add code to fit phone access -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Lead Contamination Level of Philadelphia's Green Spaces</title>
+        <!-- add leaflet map css component -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <!-- link css file -->
+        <link rel="stylesheet" href="css/style.css"> 
+    </head>
+
+    <body>
+        <header>
+            <h1>Lead Contamination Level of Philadelphia's Green Spaces</h1>
+        </header>
+
+        <main>
+            <div id="map"></div>
+
+            <div class="right-side">
+                <section class="address-section">
+                    <input type="text" name="address-entry" id="address-entry" placeholder="Type your input here...">
+                    <ol id="address-choices" class="address-choices"></ol>
+                </section>
+
+                <section class="park-list-section">
+                    <ol class="park-list">
+                        <li>
+                            <div class="park-name">Logan Square</div>
+                            <div class="park-parent">Benjamin Franklin Parkway</div>
+                            <div class="park-use">Park-Square\Plaza</div>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="chart">
+
+                </section>
+            </div>
+
+        </main>
+
+        <footer>
+            <p>
+                Lead sampling source: <a href="https://ceet.upenn.edu/leadsoilmap/">Penn CEET</a> lead soil sampling in the Philadelphia region.
+            </p>
+        </footer>
+
+         <!-- add leaflet library -->
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+         crossorigin=""></script>
+         <!-- link js file -->
+         <script type="module" src="js/main.js"></script>
+    </body>
+</html>
