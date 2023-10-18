@@ -67,14 +67,16 @@ footer {
     height: 60%;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    left: 0;
 }
 
 #lead-level-chart {
     position: absolute;
     box-sizing: border-box;
     margin-right: 1vh;
-    width: 17.6rem;
-    bottom: 3%;
+    width: 100%;
+    bottom: 4rem;
     margin-bottom: 4%;
 }
 
@@ -117,7 +119,7 @@ footer {
 
 #safe-lead-level-description {
     position: absolute;
-    bottom: 2.5%;
+    bottom: 0.2rem;
     box-sizing: border-box;
     font-size: 0.8rem;
     width: 9rem;
