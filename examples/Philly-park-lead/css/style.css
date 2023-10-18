@@ -4,27 +4,39 @@ html {
 }
 
 header {
-    height: 10vh;
+    height: 9vh;
     font-size: 12px;
     box-sizing: border-box;
 }
 
+h1 {
+    color: #577446;
+    padding: 2vh;
+    margin: 0;
+    box-sizing: border-box;
+}
 main {
     display:flex;
-    flex-direction: row;
-    height: 85vh;
-    padding: 1vh;
     box-sizing: border-box;
+    flex-direction: row;
+    height: 88vh;
+    padding: 1vh;
 }
 
 footer {
-    height: 5vh;
+    height: 2vh;
     font-size: 12px;
+    box-sizing: border-box;
+}
+
+#footnote {
+    margin: 0;
     box-sizing: border-box;
 }
 
 #map {
     width: 100%;
+    box-sizing: border-box;
 }
 
 .right-side {
@@ -48,12 +60,71 @@ footer {
     box-sizing: border-box;
 }
 
-.chart {
+/* Bottom right chart style start */
+
+.lead-level-chart-wrapper {
     border: 1px solid pink;
     height: 60%;
+    width: 100%;
     box-sizing: border-box;
 }
 
+#lead-level-chart {
+    position: absolute;
+    box-sizing: border-box;
+    margin-right: 1vh;
+    width: 17.6rem;
+    bottom: 3%;
+    margin-bottom: 4%;
+}
+
+#lead-level-chart .scale {
+    height: 2rem;
+    box-sizing: border-box;
+    /* The following gradient code is from https://cssgradient.io/ */
+    background: rgb(134,214,105);
+    background: linear-gradient(90deg, rgba(134,214,105,0.41) 0%, rgba(246,177,114,0.73) 100%);
+}
+
+#lead-level-chart .safe-level {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-right: 2px solid rgb(85, 65, 65);
+  height: 4rem;
+  box-sizing: border-box;
+  transition: width 0.5s;
+  width: 2.2%;
+}
+
+#lead-level-chart .level {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  border-right: 2px solid rgb(158, 65, 65);
+  height: 3rem;
+  box-sizing: border-box;
+  transition: width 0.5s;
+  width: 0;
+}
+
+#lead-level-chart .level-label {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    transition: left 0.5s;
+  }
+
+#safe-lead-level-description {
+    position: absolute;
+    bottom: 2.5%;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    width: 9rem;
+    text-align: center;
+}
+
+/* Bottom right chart style end */
 
 .park-list {
     padding: 0;
@@ -64,13 +135,22 @@ footer {
     font-weight: bold;
 }
 
-.park-parent,
-.park-use {
-    font-size: 0.8rem;
+.park-parent {
+    font-size: 0.7rem;
     display: inline-block;
     border: 1px solid gray;
     border-radius: 0.7rem;
     padding: 0.2rem;
-    background-color: #eee;
+    background-color: #e6f3e5;
+    margin: 2px;
+}
+
+.park-use {
+    font-size: 0.7rem;
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 0.7rem;
+    padding: 0.2rem;
+    background-color: #f5efe5;
     margin: 2px;
 }
