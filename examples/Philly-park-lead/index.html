@@ -13,6 +13,8 @@
         crossorigin=""/>
         <!-- link css file -->
         <link rel="stylesheet" href="css/style.css"> 
+        <link rel="stylesheet" href="css/chart-style.css">
+        <link rel="stylesheet" href="css/right-style.css">
     </head>
 
     <body>
@@ -25,8 +27,13 @@
 
             <div class="right-side">
                 <section class="address-section">
-                    <input type="text" name="address-entry" id="address-entry" placeholder="Type your input here...">
-                    <ol id="address-choices" class="address-choices"></ol>
+                    <fieldset>
+                        <legend><strong>Choose Filtering Method</strong></legend>
+                        <label><input id="by-address" type="radio" name="filter" checked> By Address</label>
+                        <label><input id="outdoor" type="radio" name="filter"> By Park</label>
+                        <input type="text" name="address-entry" id="address-entry" placeholder="Type your input here...">
+                        <ol id="address-choices" class="address-choices"></ol>
+                      </fieldset>
                 </section>
 
                 <section class="park-list-section">

@@ -1,0 +1,41 @@
+fieldset {
+    FONT-WEIGHT: 400;
+    font-size: 0.8rem;
+    height: 5rem;
+    box-sizing: border-box;
+    margin: 0;
+    border-width: 1px;
+}
+
+#address-entry {
+    margin-top: 0.5rem;
+}
+
+.park-list {
+    padding: 0;
+    list-style: none;
+}
+
+.park-name {
+    font-weight: bold;
+}
+
+.park-parent {
+    font-size: 0.7rem;
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 0.7rem;
+    padding: 0.2rem;
+    background-color: #e6f3e5;
+    margin: 2px;
+}
+
+.park-use {
+    font-size: 0.7rem;
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 0.7rem;
+    padding: 0.2rem;
+    background-color: #f5efe5;
+    margin: 2px;
+}

@@ -1,0 +1,61 @@
+/* Bottom right chart style start */
+
+
+#lead-level-chart {
+    position: absolute;
+    box-sizing: border-box;
+    margin-right: 1vh;
+    width: 100%;
+    bottom: 4rem;
+    margin-bottom: 4%;
+}
+
+#lead-level-chart .scale {
+    height: 2rem;
+    box-sizing: border-box;
+    /* The following gradient code is from https://cssgradient.io/ */
+    background: rgb(116, 141, 107);
+    background: linear-gradient(90deg, rgba(101, 160, 79, 0.41) 0%, rgba(246,177,114,0.73) 100%);
+    /* background: rgb(112,133,95);
+    background: linear-gradient(90deg, rgba(112,133,95,1) 0%, rgba(201,100,60,1) 100%); */
+}
+
+#lead-level-chart .safe-level {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-right: 2px solid rgb(85, 65, 65);
+  height: 4rem;
+  box-sizing: border-box;
+  transition: width 0.5s;
+  width: 2.2%;
+}
+
+#lead-level-chart .level {
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  border-right: 2px solid rgb(158, 65, 65);
+  height: 3rem;
+  box-sizing: border-box;
+  transition: width 0.5s;
+  width: 0;
+}
+
+#lead-level-chart .level-label {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    transition: left 0.5s;
+  }
+
+#safe-lead-level-description {
+    position: absolute;
+    bottom: 0.2rem;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    width: 9rem;
+    text-align: center;
+}
+
+/* Bottom right chart style end */

@@ -48,111 +48,23 @@ footer {
 
 .address-section {
     border: 1px solid green;
-    height: 10%;
+    height: 15%;
     padding: 1vh;
     box-sizing: border-box;
 }
 
 .park-list-section {
     border: 1px solid orange;
-    height: 30%;
+    height: 45%;
     padding: 1vh;
     box-sizing: border-box;
 }
 
-/* Bottom right chart style start */
-
 .lead-level-chart-wrapper {
     border: 1px solid pink;
-    height: 60%;
+    height: 40%;
     width: 100%;
     box-sizing: border-box;
     position: relative;
     left: 0;
-}
-
-#lead-level-chart {
-    position: absolute;
-    box-sizing: border-box;
-    margin-right: 1vh;
-    width: 100%;
-    bottom: 4rem;
-    margin-bottom: 4%;
-}
-
-#lead-level-chart .scale {
-    height: 2rem;
-    box-sizing: border-box;
-    /* The following gradient code is from https://cssgradient.io/ */
-    background: rgb(134,214,105);
-    background: linear-gradient(90deg, rgba(134,214,105,0.41) 0%, rgba(246,177,114,0.73) 100%);
-}
-
-#lead-level-chart .safe-level {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-right: 2px solid rgb(85, 65, 65);
-  height: 4rem;
-  box-sizing: border-box;
-  transition: width 0.5s;
-  width: 2.2%;
-}
-
-#lead-level-chart .level {
-  position: absolute;
-  top: -1rem;
-  left: 0;
-  border-right: 2px solid rgb(158, 65, 65);
-  height: 3rem;
-  box-sizing: border-box;
-  transition: width 0.5s;
-  width: 0;
-}
-
-#lead-level-chart .level-label {
-    position: absolute;
-    top: -2rem;
-    left: 0;
-    transition: left 0.5s;
-  }
-
-#safe-lead-level-description {
-    position: absolute;
-    bottom: 0.2rem;
-    box-sizing: border-box;
-    font-size: 0.8rem;
-    width: 9rem;
-    text-align: center;
-}
-
-/* Bottom right chart style end */
-
-.park-list {
-    padding: 0;
-    list-style: none;
-}
-
-.park-name {
-    font-weight: bold;
-}
-
-.park-parent {
-    font-size: 0.7rem;
-    display: inline-block;
-    border: 1px solid gray;
-    border-radius: 0.7rem;
-    padding: 0.2rem;
-    background-color: #e6f3e5;
-    margin: 2px;
-}
-
-.park-use {
-    font-size: 0.7rem;
-    display: inline-block;
-    border: 1px solid gray;
-    border-radius: 0.7rem;
-    padding: 0.2rem;
-    background-color: #f5efe5;
-    margin: 2px;
 }
