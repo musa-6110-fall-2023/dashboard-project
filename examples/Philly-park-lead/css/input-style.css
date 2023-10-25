@@ -1,0 +1,9 @@
+#address-choice li {
+    background-color: white;
+}
+
+#address-choices {
+    z-index: 1000000;
+    position: relative;
+    background: white;
+}

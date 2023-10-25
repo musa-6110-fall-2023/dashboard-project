@@ -48,16 +48,17 @@ footer {
 
 .address-section {
     border: 1px solid green;
-    height: 15%;
+    height: 18%;
     padding: 1vh;
     box-sizing: border-box;
 }
 
 .park-list-section {
     border: 1px solid orange;
-    height: 45%;
+    height: 42%;
     padding: 1vh;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 .lead-level-chart-wrapper {

@@ -14,14 +14,28 @@ fieldset {
 .park-list {
     padding: 0;
     list-style: none;
+    margin: 0;
+}
+
+#list-title {
+    font-size: 0.8rem;
+    margin: 0.2rem;
+}
+
+li {
+    margin: 0.2rem; 
 }
 
 .park-name {
     font-weight: bold;
+    font-size: 0.7rem;
+    margin-top: 9px;
+    color: rgb(84, 83, 83);
+    margin-bottom: 4px;
 }
 
 .park-parent {
-    font-size: 0.7rem;
+    font-size: 9px;
     display: inline-block;
     border: 1px solid gray;
     border-radius: 0.7rem;
@@ -31,7 +45,7 @@ fieldset {
 }
 
 .park-use {
-    font-size: 0.7rem;
+    font-size: 9px;
     display: inline-block;
     border: 1px solid gray;
     border-radius: 0.7rem;

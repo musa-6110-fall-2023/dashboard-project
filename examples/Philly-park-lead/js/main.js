@@ -1,5 +1,7 @@
 import { initializeMap } from './map.js';
 import { setLeadLevel } from './chart.js';
+import { initializeAddressEntry } from './address-input.js';
+import { initializeList } from './park-list.js';
 
 const phillyPark = await fetch('data/philly-park.json');
 const parks = await phillyPark.json();
@@ -14,5 +16,7 @@ const cityLimits = await cityBoundary.json();
 window.parks = parks;
 window.leadSamples = leadSamples;
 window.cityLimits = cityLimits;
-window.schoolMap = initializeMap(parks, leadSamples, cityLimits); // remember to add new layer her as well
+window.parkMap = initializeMap(parks, leadSamples, cityLimits); // remember to add new layer her as well
 window.setLeadLevel = setLeadLevel;
+window.parkList = initializeList(parks);
+initializeAddressEntry();
