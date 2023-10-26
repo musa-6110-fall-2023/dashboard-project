@@ -15,7 +15,7 @@ async function handleAddressEntryChange() {
   const data = await resp.json(); // get data from reponse
 
   let html = '';
-  for (const feature of data.features) { // .feature is just select json contents
+  for (const feature of data.features) { // .feature is just select json contents to have an array
     const lihtml = `
     <li data-lat="${feature.center[1]}" data-lon="${feature.center[0]}">
       ${feature.place_name}

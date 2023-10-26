@@ -20,7 +20,7 @@ async function handleAddressEntryChange() {
     <li data-lat="${feature.center[1]}" data-lon="${feature.center[0]}">
       ${feature.place_name}
     </li>
-    `;
+    `; // lat lon are customize labels as strings in the tags
     html += lihtml;
   }
   addressChoiceList.innerHTML = html;

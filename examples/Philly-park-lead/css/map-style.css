@@ -1,0 +1,44 @@
+.legend {
+    background-color: rgba(230, 224, 224, 0.438);
+    padding: 0.7rem;
+    width: min-content;
+}
+
+.legend-content {
+    display:flex;
+    box-sizing: border-box;
+    flex-direction: row;
+}
+
+.legend h2 {
+    font-size: 0.8rem;
+    margin: 0%;
+}
+  
+.soil-legend h3,
+.park-legend h3 {
+    font-size: 0.7rem;
+    padding: 0.3rem;
+}
+
+.soil-entries,
+.park-entries {
+    font-size: 0.7rem;
+    list-style: none;
+    padding-left: 0;
+}
+  
+.lead-entry,
+.park-entry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.2rem;
+}
+  
+.lead-color,
+.park-color {
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+}

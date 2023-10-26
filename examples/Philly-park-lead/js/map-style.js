@@ -1,4 +1,42 @@
+const leadLabel = [
+  'Less than 150',
+  'From 150 to 400',
+  'From 400 to 1,000',
+  'From 1,000 to 2,000',
+  'Greater than 2,000',
+];
 
+const parkLabel = [
+  'Less than 32.20',
+  'From 32.20 to 144.51',
+  'From 144.51 to 304.48',
+  'From 304.48 to 850.69',
+  'Greater than 850.69',
+];
+
+const leadColor = [
+  '#70855F',
+  '#A2A67C',
+  '#EDCA91',
+  '#DB864D',
+  '#C9643C',
+];
+
+const parkColor = [
+  '#C3CA92',
+  '#A4B17B',
+  '#859864',
+  '#697E50',
+  '#4E6530',
+];
+
+const leadRadius = [
+  2,
+  3,
+  5,
+  7,
+  10,
+];
 
 function calLeadStyle(sample) {
   if (sample.properties.Lead__ppm < 150) {
@@ -82,7 +120,66 @@ function calParkStyle(sample) {
   }
 }
 
+// legend part
+
+function legendStyle(map) {
+  const legendDiv = document.createElement('div'); // abstract html div tag
+  legendDiv.classList.add('legend'); // div class
+
+  legendDiv.innerHTML = '<h2>Legend</h2>'; // add html content
+
+  const legendContent = document.createElement('div'); // abstract html div tag
+  legendContent.classList.add('legend-content'); // div class
+
+  const soilDiv = document.createElement('div'); // abstract html div tag
+  soilDiv.classList.add('soil-legend'); // div class
+  soilDiv.innerHTML = '<h3>Soil Lead Level (ppm)</h3>'; // add html content
+  let ulHTML = '<ul class="soil-entries">';
+  const maxRadius = Math.max(...leadRadius); // ...flatten list
+  for (const [index, label] of leadLabel.entries()) { // .entries gives both key and value
+    const color = leadColor[index];
+    const radius = leadRadius[index];
+    const liHTML = `
+      <li class="lead-entry">
+        <span class="lead-color" style="background-color: ${color}; width: ${radius*2}px; height: ${radius*2}px; border-radius: ${radius}px; margin-left: ${maxRadius-radius}px; margin-right: ${maxRadius-radius}px"></span>
+        <span class="lead-label">${label.replace(/ /g, '&nbsp;')}</span>
+      </li>
+      `;
+    ulHTML += liHTML;
+  }
+  ulHTML += `</ul>`;
+  soilDiv.innerHTML += ulHTML;
+
+  const parkDiv = document.createElement('div'); // abstract html div tag
+  parkDiv.classList.add('park-legend'); // div class
+  parkDiv.innerHTML = '<h3>Park Size (acre)</h3>'; // add html content
+  let pulHTML = '<ul class="park-entries">';
+  for (const [index, label] of parkLabel.entries()) { // .entries gives both key and value
+    const color = parkColor[index];
+    const liHTML = `
+      <li class="park-entry">
+        <span class="park-color" style="background-color: ${color};"></span>
+        <span class="park-label">${label.replace(/ /g, '&nbsp;')}</span>
+      </li>
+      `;
+    pulHTML += liHTML;
+  }
+  pulHTML += `</ul>`;
+  parkDiv.innerHTML += pulHTML;
+
+  legendContent.appendChild(soilDiv); // [object HTMLDivElement], typically occurs when you're trying to insert an HTML element into the map using the innerHTML property of another element. When you concatenate soilDiv and legendDiv using the += operator, you are actually appending the [object HTMLDivElement] string representation of soilDiv to the legendDiv.
+  legendContent.appendChild(parkDiv);
+
+  legendDiv.appendChild(legendContent);
+
+  return legendDiv; // return html div
+}
+
+
+// legend part END
+
 export {
   calLeadStyle,
   calParkStyle,
+  legendStyle,
 };
