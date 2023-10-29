@@ -7,8 +7,8 @@ const leadLabel = [
 ];
 
 const parkLabel = [
-  'Less than 32.20',
-  'From 32.20 to 144.51',
+  'Less than 33.74',
+  'From 33.74 to 144.51',
   'From 144.51 to 304.48',
   'From 304.48 to 850.69',
   'Greater than 850.69',
@@ -82,14 +82,14 @@ function calLeadStyle(sample) {
 }
 
 function calParkStyle(sample) {
-  if (sample.properties.ACREAGE < 32.20) {
+  if (sample.properties.ACREAGE < 33.74) {
     return {
       stroke: false,
       fillColor: '#C3CA92',
       fillOpacity: 0.9,
       weight: 2,
     };
-  } else if (sample.properties.ACREAGE >= 32.20 && sample.properties.ACREAGE < 144.51) {
+  } else if (sample.properties.ACREAGE >= 33.74 && sample.properties.ACREAGE < 144.51) {
     return {
       stroke: false,
       fillColor: '#A4B17B',

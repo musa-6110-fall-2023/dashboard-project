@@ -80,7 +80,7 @@ a {
 
 .park-list-section {
     border: 1px solid orange;
-    height: 45%;
+    height: 50%;
     padding: 1vh;
     box-sizing: border-box;
     overflow: auto;
@@ -88,7 +88,7 @@ a {
 
 .lead-level-chart-wrapper {
     border: 1px solid pink;
-    height: 40%;
+    height: 35%;
     width: 100%;
     box-sizing: border-box;
     position: relative;

@@ -1,4 +1,4 @@
-const addressEntry = document.querySelector('#address-entry');
+const addressEntry = document.querySelector('#entry');
 const addressChoiceList = document.querySelector(`#address-choices`);
 
 function initializeAddressEntry() {

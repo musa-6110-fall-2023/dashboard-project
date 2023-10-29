@@ -1,8 +1,10 @@
-#address-choice li {
+#address-choice li,
+#park-choice li {
     background-color: white;
 }
 
-#address-choices {
+#address-choices,
+#park-choices {
     z-index: 1000000;
     position: relative;
     background: white;
