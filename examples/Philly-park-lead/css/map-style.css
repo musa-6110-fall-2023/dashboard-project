@@ -42,3 +42,21 @@
     height: 1rem;
     display: inline-block;
 }
+
+.tool-lead,
+.tool-park {
+    margin: 0;
+}
+
+.pop-title {
+    margin: 0;
+}
+
+.pop-content {
+    margin: 0;
+    height: 0.3rem;
+}
+
+li {
+    margin: 0.2rem; 
+}

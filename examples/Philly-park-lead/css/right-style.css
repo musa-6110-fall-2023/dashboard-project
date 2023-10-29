@@ -1,10 +1,15 @@
 fieldset {
     FONT-WEIGHT: 400;
     font-size: 0.8rem;
+    color: rgb(61, 60, 60);
     height: 5rem;
     box-sizing: border-box;
     margin: 0;
     border-width: 1px;
+}
+
+legend {
+    font-size: 0.9rem;
 }
 
 #address-entry {
@@ -22,20 +27,27 @@ fieldset {
     margin: 0.2rem;
 }
 
-li {
+#list-title {
+    font-size: 0.9rem;
+    color: rgb(61, 60, 60);
+}
+
+.park-list li {
     margin: 0.2rem; 
+    margin-bottom: 7px;
+    border-top: 1px solid rgb(85, 65, 65);
 }
 
 .park-name {
     font-weight: bold;
-    font-size: 0.7rem;
-    margin-top: 9px;
+    font-size: 0.8rem;
+    margin-top: 5px;
     color: rgb(84, 83, 83);
     margin-bottom: 4px;
 }
 
 .park-parent {
-    font-size: 9px;
+    font-size: 0.7rem;
     display: inline-block;
     border: 1px solid gray;
     border-radius: 0.7rem;
@@ -45,7 +57,7 @@ li {
 }
 
 .park-use {
-    font-size: 9px;
+    font-size: 0.7rem;
     display: inline-block;
     border: 1px solid gray;
     border-radius: 0.7rem;

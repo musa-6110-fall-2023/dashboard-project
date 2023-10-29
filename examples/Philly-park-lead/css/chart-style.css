@@ -11,7 +11,7 @@
 }
 
 #lead-level-chart .scale {
-    height: 2rem;
+    height: 1.5rem;
     box-sizing: border-box;
     /* The following gradient code is from https://cssgradient.io/ */
     background: rgb(116, 141, 107);

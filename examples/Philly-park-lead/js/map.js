@@ -15,7 +15,14 @@ function initializeMap(parks, leadSamples, cityLimits) { // remember to input al
 
   phillyParkLayer = L.geoJSON(parks,
     {style: calParkStyle,
-    });
+    }).bindTooltip((l) => {
+    return `<p class="tool-park"><strong>Green Space:</strong> ${l.feature.properties.SITE_NAME}</p>`;
+  }).bindPopup((l) => {
+    return `<h3 class="pop-title">${l.feature.properties.SITE_NAME}</h3>
+    <p class="pop-content"><strong>Parent:</strong> ${l.feature.properties.CHILD_OF}</p>
+    <p class="pop-content"><strong>Type:</strong> ${l.feature.properties.USE_}</p>
+    <p class="pop-content"><strong>Area (acre):</strong> ${l.feature.properties.ACREAGE.toFixed(2)}</p>`;
+  });
   phillyParkLayer.addTo(map);
 
   soilLayer = L.geoJSON(leadSamples,
@@ -23,7 +30,10 @@ function initializeMap(parks, leadSamples, cityLimits) { // remember to input al
       pointToLayer: (parks, latlng) => L.circleMarker(latlng), // just type latlng or any names and leaflet know how to find goejson's coordinate
       // Can also do the latlng manually, remember to flip the lon lat (leaflet and geojson read it in the opposite way)
       // pointToLayer: (parks) => L.circleMarker([parks.geometry.coordinates[1], parks.geometry.coordinates[0]]),
-    });
+    }).bindTooltip((l) => {
+    return `<p class="tool-lead"><strong>Lead (ppm):</strong> ${l.feature.properties.Lead__ppm}</p>`;
+  });
+
   soilLayer.addTo(map);
 
   cityLayer = L.geoJSON(cityLimits,
