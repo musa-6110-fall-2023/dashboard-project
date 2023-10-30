@@ -23,8 +23,8 @@ function initializeSchoolMap(schools, eventBus) {
 function setupMapEventHandlers(map) {
   map.eventBus.addEventListener('selectionchanged', (evt) => {
     const { added, removed } = evt.detail;
-    highlightSchoolsOnMap(added, map);
-    unhighlightSchoolsOnMap(removed, map);
+    highlightSchoolsOnMap(evt.detail.added, map);
+    unhighlightSchoolsOnMap(evt.detail.removed, map);
   });
 
   map.eventBus.addEventListener('filterschanged', (evt) => {

@@ -2,10 +2,15 @@ const addressEntry = document.querySelector('#entry');
 const addressChoiceList = document.querySelector(`#address-choices`);
 
 function initializeAddressEntry() {
-  addressEntry.addEventListener('input', handleAddressEntryChange);
+  if (addressEntry.mycustomfunc) {
+    addressEntry.removeEventListener('input', addressEntry.mycustomfunc);
+  }
+  addressEntry.mycustomfunc = handleAddressEntryChange;
+  addressEntry.addEventListener('input', addressEntry.mycustomfunc);
 }
 
 async function handleAddressEntryChange() {
+  console.log('handling address change');
   const partialAddress = addressEntry.value; // .value gets the text of the entry
   const apiKey = 'pk.eyJ1IjoianVueWl5IiwiYSI6ImNsbm03NGszNDFrbHgybW1uZXBrMTMwZ3EifQ.VJyFnRhnQtJ9yU5gl0SdoA';
   const bbox = [-75.3002, 39.8544, -74.9995, 40.0649].join(',');
