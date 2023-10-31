@@ -4,6 +4,7 @@
     position: relative;
     background: rgba(250, 250, 250, 0.9);
     color: rgb(61, 60, 60);
+    /* need to specify max-height, otherwise overflow won't work */
     max-height: 15rem;
     overflow: auto;
 }

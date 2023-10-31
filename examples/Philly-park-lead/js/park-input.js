@@ -21,10 +21,10 @@ function handleSearchboxInput(parks, events) {
     if (lowerCaseValue != ``) {
       if (feature.properties.ASSET_NAME.toLowerCase().includes(lowerCaseValue) || feature.properties.SITE_NAME.toLowerCase().includes(lowerCaseValue)) {// make it case insensitive
         const lihtml = `
-        <li class="park-choices" data-parkid="${feature.id}">
+        <li class="park-choices" data-parkid="${feature.id}"> 
           ${feature.properties.ASSET_NAME} - ${feature.properties.SITE_NAME}
         </li>
-        `;
+        `; // remember to add customized data attribute to have reference of the park ID for later use
         html += lihtml;
       }
     }
@@ -40,27 +40,14 @@ function handleSearchboxInput(parks, events) {
 }
 
 function handleParkChoice(evt, events) {
-  // const mapZoomSelect = map.fitBounds(cityLayer.getBounds());
   const li = evt.target; // .target is just get the object you click
   console.log(li);
-  const mapZoomSelect = li.dataset.parkid; // .dataset is get the attribute in html
+  const mapZoomSelect = li.dataset.parkid; // .dataset is get the attribute in html (get your customized attribute!)
 
+  // define a customized event
   const zoomId = new CustomEvent('zoom-map', { detail: { mapZoomSelect }}); // define your own event
   events.dispatchEvent(zoomId);
 }
-
-// function updateFilteredParks(parks, events) {
-//   const lowerCaseValue = parkEntry.value.toLowerCase(); // .value is another attribute for input element. Other attributes like "checked" for checkbox
-//   const filteredParks = []; // create a new thing to filter because don't want to overwrite
-//   for (const park of parks.data.parks) {
-//     if (park.name.toLowerCase().includes(lowerCaseValue)) {// make it case insensitive
-//       filteredParks.push(park);
-//     }
-//   }
-
-//   const newEvent = new CustomEvent('filter-stations', { detail: { filteredStations }}); // define your own event
-//   events.dispatchEvent(newEvent);
-// }
 
 export {
   initializeParkEntry,
