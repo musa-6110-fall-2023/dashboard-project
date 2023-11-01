@@ -1,6 +1,9 @@
+/* globals turf */
+
 import { calLeadStyle } from './map-style.js';
 import { calParkStyle } from './map-style.js';
 import { legendStyle } from './map-style.js';
+import { leadAnalysis } from './cal.js';
 import { setLeadLevel } from './chart.js';
 
 // add layers to map
@@ -66,10 +69,11 @@ function initializeMap(parks, leadSamples, cityLimits, events) { // remember to 
       if (layer.feature.id == ID) { // still need feature, if not, it will be an array; the feature here is a leaflet attribute, which get each feature from geojson "features", not the geojson path
         // .fitBounds will just show the final results, .flyToBound is fancy
         map.flyToBounds(layer.getBounds());
+
         // updateSoilChart(layer.feature, leadSamples)
-        const parkBuffer = turf.buffer(layer.feature, 0.2);
-        
-        console.log(parkBuffer);
+        const parkBuffer = turf.buffer(layer.feature, 0.2); // calculate buffer, 0.2km
+        const parkLead = leadAnalysis(parkBuffer, leadSamples); // do the calculations
+        setLeadLevel(parkLead); // change the chart
       }
     });
   });
