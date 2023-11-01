@@ -3,13 +3,13 @@ const parkChoiceList = document.querySelector(`#park-choices`);
 
 // if checkbox is checked, see input
 function initializeParkEntry(parks, events) {
-  if (parkEntry.mycustomfunc) {
+  if (parkEntry.mycustomfunc) { // first need to remove all exsting event listener on the search box to avoid duplicates
     parkEntry.removeEventListener('input', parkEntry.mycustomfunc);
   }
   parkEntry.mycustomfunc = () => {
-    handleSearchboxInput(parks, events);
+    handleSearchboxInput(parks, events); // define customized attribute
   };
-  parkEntry.addEventListener('input', parkEntry.mycustomfunc);
+  parkEntry.addEventListener('input', parkEntry.mycustomfunc); // need to have a customized attribute to remove this event listener later
 }
 
 function handleSearchboxInput(parks, events) {

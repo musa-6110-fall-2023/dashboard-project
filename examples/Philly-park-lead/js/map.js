@@ -68,6 +68,7 @@ function initializeMap(parks, leadSamples, cityLimits, events) { // remember to 
         map.flyToBounds(layer.getBounds());
         // updateSoilChart(layer.feature, leadSamples)
         const parkBuffer = turf.buffer(layer.feature, 0.2);
+        
         console.log(parkBuffer);
       }
     });

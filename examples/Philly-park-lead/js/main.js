@@ -45,6 +45,7 @@ addressCheckbox.addEventListener('change', () => {
 const events = new EventTarget(); // events object here is the event bus
 
 // make things avaliable in every file
+
 window.parks = parks;
 window.leadSamples = leadSamples;
 window.cityLimits = cityLimits;

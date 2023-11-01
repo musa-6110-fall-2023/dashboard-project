@@ -25,21 +25,22 @@
   top: 0;
   left: 0;
   border-right: 2px solid rgb(85, 65, 65);
-  height: 4rem;
+  height: 3.5rem;
   box-sizing: border-box;
   transition: width 0.5s;
-  width: 2.2%;
+  /* calculate the relative width using log scale: 5.9914645471/9.8016762864 */
+  width: 61.1%;
 }
 
 #lead-level-chart .level {
   position: absolute;
-  top: -1rem;
+  top: -0.5rem;
   left: 0;
   border-right: 2px solid rgb(158, 65, 65);
-  height: 3rem;
+  height: 2.5rem;
   box-sizing: border-box;
   transition: width 0.5s;
-  width: 0;
+  width: 61.1%;
 }
 
 #lead-level-chart .level-label {
@@ -51,6 +52,7 @@
 
 #safe-lead-level-description {
     position: absolute;
+    left: 18%;
     bottom: 0.2rem;
     box-sizing: border-box;
     font-size: 0.8rem;
