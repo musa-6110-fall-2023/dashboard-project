@@ -1,0 +1,263 @@
+/* below are for global settings */
+html{
+    background-color: #060606;
+    font-family: IBM Plex Sans;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 12px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    font-size: 14px;
+    font-weight:lighter;
+    color: grey;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* below are for header */
+header{
+    height: 68px;
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #161616;
+    color:#e5e5e5;
+    border: 1px solid #2f2f2f;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+.title{
+    font-size: 28px;
+    font-weight: 400;
+    width: 400px;
+}
+
+.empty {
+    width: 300px;
+}
+
+.address-section {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.address-entry {
+    width: 100%;
+    max-width: 600px;
+    outline: 1px solid #2f2f2f;
+    border: 0;
+    height: 42px;
+    background-color: #262626;
+    color:#e5e5e5;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    text-indent: 8px;
+}
+
+.address-entry:focus {
+    outline: 2px solid #0052ce;
+    border: 0;
+    height: 42px;
+}
+
+.address-choices {
+    list-style: none;
+    background-color: #262626;
+    padding: 0;
+    margin-top: 2px;
+    width: 600px;
+    position: fixed;
+    z-index: 5000;
+}
+
+.address-choices li {
+    height: 48px;
+    flex:1;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.address-choices li:hover {
+    background-color: #0052ce;
+    cursor: pointer;
+}
+
+
+/* below are for main */
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    color:#e5e5e5;
+    padding: 0;
+    margin: 0;
+    gap: 12px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+#map{
+    flex: 1;
+    margin-left: 12px;
+    border: 1px solid #2f2f2f;
+    padding: 0;
+    margin: 0;
+    background-color: #161616;
+}
+
+.left{
+    display: grid;
+    grid-template-columns: 250px 350px;
+    width: 600px;
+    height: inherit;
+    border: 1px solid #2f2f2f;
+    background-color: #161616;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-bar {
+    height: 100%;
+}
+
+
+.section {
+    border-bottom: 1px solid #2f2f2f;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.filter-section {
+    border: 0;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.section-title {
+    padding-bottom: 16px;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+
+.radio {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    vertical-align: center;
+    margin-bottom: 8px;
+}
+
+.radio label{
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+input[type=radio] {
+    --s: 1em;     /* control the size */
+    --c: #0052ce; /* the active color */
+    
+    height: var(--s);
+    aspect-ratio: 1;
+    border: 1.5px solid #939393;
+    padding: calc(var(--s)/8);
+    margin-right: 8px;
+    background: 
+       radial-gradient(farthest-side,var(--c) 94%,#0000) 
+       50%/0 0 no-repeat content-box;
+    border-radius: 50%;
+    outline-offset: calc(var(--s)/10);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    font-size: inherit;
+    transition: .3s;
+  }
+  input[type=radio]:checked {
+    border-color: var(--c);
+    background-size: 100% 100%;
+  }
+
+
+.left-list {
+    border-left: 1px solid #2f2f2f;
+    overflow: scroll;
+    height: inherit;
+}
+
+.crime-list {
+    height: inherit;
+    list-style-type: none;
+    width: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.crime-list li{
+    height: 84px;
+    padding: 12px;
+    border-bottom: 1px solid #2f2f2f;
+    width: 100%;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.each-crime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.crime-name{
+    font-weight: bold;
+}
+
+.crime-time {
+    font-size: 12px;
+    color: #939393;
+}
+
+.crime-location {
+    font-size: 12px;
+    color: #939393;
+}
+
+.crime-distance {
+    font-size: 14px;
+}
+
