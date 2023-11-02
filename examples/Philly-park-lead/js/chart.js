@@ -1,3 +1,5 @@
+import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7/+esm';
+
 const leadLevelMarker = document.querySelector('#lead-level-chart .level');
 const leadLevelLabel = document.querySelector('#lead-level-chart .level-label');
 
@@ -16,6 +18,12 @@ function setLeadLevel(n) {
   // Set the location of the label
   const labelW = leadLevelLabel.offsetWidth;
   leadLevelLabel.style.left = `min(calc(100% - ${labelW + 1}px), ${scaledValue}%)`;
+
+  // D3 to add color background
+  const colorScale = d3.interpolateRgb('rgba(101, 160, 79, 0.41)', 'rgba(246, 177, 114, 0.73)');
+  window.colorScale = colorScale;
+  const color = colorScale(scaledValue/100);
+  leadLevelLabel.style.backgroundColor = color;
 }
 
 export {
