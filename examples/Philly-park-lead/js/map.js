@@ -3,6 +3,7 @@
 import { calLeadStyle } from './map-style.js';
 import { calParkStyle } from './map-style.js';
 import { legendStyle } from './map-style.js';
+import { backButtonStyle } from './map-style.js';
 import { leadAnalysis } from './cal.js';
 import { setLeadLevel } from './chart.js';
 
@@ -60,15 +61,35 @@ function initializeMap(parks, leadSamples, cityLimits, events) { // remember to 
   };
   legend.addTo(map);
 
+  // add back button
+  const backView = L.control({position: 'topleft'});
+  backView.onAdd = (map) => {
+    return backButtonStyle(map);
+  };
+  backView.addTo(map);
+
   // modify map zoom when click buttons on the right
   // call cutomized event
   events.addEventListener('zoom-map', (evt) => {
     // match the clicked park by polygon ID of geojson file
     const ID = evt.detail.mapZoomSelect;
+    phillyParkLayer.resetStyle();
     phillyParkLayer.eachLayer((layer) => { // .eachLayer is to get each object from this layer
       if (layer.feature.id == ID) { // still need feature, if not, it will be an array; the feature here is a leaflet attribute, which get each feature from geojson "features", not the geojson path
         // .fitBounds will just show the final results, .flyToBound is fancy
-        map.flyToBounds(layer.getBounds());
+
+        layer.setStyle({
+          stroke: true,
+          color: 'red',
+          weight: 3,
+        });
+        layer.bringToFront();
+
+        // set zoomin level
+        const parkZoom = turf.buffer(layer.feature, 0.5); // calculate buffer, 0.2km
+        console.log(parkZoom)
+        const [minLon, minLat, maxLon, maxLat] =turf.bbox(parkZoom);
+        map.flyToBounds([[minLat, minLon], [maxLat, maxLon]]);
 
         // updateSoilChart(layer.feature, leadSamples)
         const parkBuffer = turf.buffer(layer.feature, 0.2); // calculate buffer, 0.2km
@@ -84,4 +105,5 @@ function initializeMap(parks, leadSamples, cityLimits, events) { // remember to 
 
 export {
   initializeMap,
+  cityLayer,
 };

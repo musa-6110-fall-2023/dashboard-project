@@ -1,7 +1,17 @@
+/* at the start of CSS, make sure design go to the edge of the browser */
+html,
+body {
+    padding: 0;
+    /* border-box doesn't include margin, only padding */
+    margin: 0;
+}
+
+/* layout style */
 html {
     font-family: sans-serif;
     box-sizing: border-box;
     height: 100%;
+    /* overflow: hidden; */
 }
 
 header {
@@ -24,22 +34,24 @@ h1 {
     /* adjust background image transparency */
     background-color: rgba(255, 255, 255, 0.3);
 }
+
 main {
     display:flex;
     box-sizing: border-box;
     flex-direction: row;
-    height: 87vh;
+    height: 88vh;
     padding: 1vh;
 }
 
 footer {
-    height: 3vh;
+    height: 2vh;
     font-size: 12px;
     box-sizing: border-box;
 }
 
 #footnote {
     margin: 0;
+    margin-left: 1%;
     box-sizing: border-box;
 }
 
@@ -61,6 +73,7 @@ a {
   }
 /* specify link color end  */
 
+/* style of each componet */
 #map {
     width: 100%;
     box-sizing: border-box;
@@ -82,16 +95,23 @@ a {
 
 .park-list-section {
     border: 1px solid orange;
-    height: 50%;
+    height: 55%;
     padding: 1vh;
     box-sizing: border-box;
+    /* flexbox is easy to fill the mother componet */
+    display: flex;
+    flex-direction: column;
+}
+
+.park-list {
     /* overflow will add scroll bar */
     overflow: auto;
+    box-sizing: border-box;
 }
 
 .lead-level-chart-wrapper {
     border: 1px solid pink;
-    height: 35%;
+    height: 30%;
     width: 100%;
     box-sizing: border-box;
     position: relative;

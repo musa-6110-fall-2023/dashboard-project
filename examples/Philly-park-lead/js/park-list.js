@@ -8,7 +8,7 @@ function initializeList(parks, events) {
 function addParksToList(parks, events) {
   let html = '';
   for (const park of parks.features) {
-    const name = park.properties.SITE_NAME;
+    const name = park.properties.ASSET_NAME;
     const parent = park.properties.CHILD_OF;
     const use = park.properties.USE_;
 

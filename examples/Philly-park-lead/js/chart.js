@@ -13,7 +13,7 @@ function setLeadLevel(n) {
   leadLevelMarker.style.width = `${scaledValue}%`;
 
   // Set the text of the label
-  leadLevelLabel.innerHTML = `${n} ppm`;
+  leadLevelLabel.innerHTML = `<div id="chart-text" class="chart-pop"><strong>Lead Level:</strong> ${n} ppm</div>`;
 
   // Set the location of the label
   const labelW = leadLevelLabel.offsetWidth;

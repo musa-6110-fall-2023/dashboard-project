@@ -6,6 +6,7 @@ import { initializeParkEntry } from './park-input.js';
 
 const phillyPark = await fetch('data/philly-park.json');
 const parks = await phillyPark.json();
+parks.features.sort((a, b) => a.properties.ASSET_NAME.localeCompare(b.properties.ASSET_NAME));
 
 const soilLead = await fetch('data/soil-lead-2023-7.json');
 const leadSamples = await soilLead.json();

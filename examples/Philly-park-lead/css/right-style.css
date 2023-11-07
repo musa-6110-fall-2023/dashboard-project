@@ -30,6 +30,8 @@ legend {
 #list-title {
     font-size: 0.9rem;
     color: rgb(61, 60, 60);
+    height: 10%;
+    box-sizing: border-box;
 }
 
 .park-list li {

@@ -31,10 +31,10 @@ async function handleAddressEntryChange() {
   addressChoiceList.innerHTML = html;
 
   const choices = addressChoiceList.querySelectorAll('li'); // select all the children of address choice list that match li
+  console.log(data);
   for (const choice of choices) {
     choice.addEventListener(handleAddressChoice);
   }
-  console.log(data);
 }
 
 
