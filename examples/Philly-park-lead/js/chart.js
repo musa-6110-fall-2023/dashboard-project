@@ -13,7 +13,7 @@ function setLeadLevel(n) {
   leadLevelMarker.style.width = `${scaledValue}%`;
 
   // Set the text of the label
-  leadLevelLabel.innerHTML = `<div id="chart-text" class="chart-pop"><strong>Lead Level:</strong> ${n} ppm</div>`;
+  leadLevelLabel.innerHTML = `<div id="chart-text" class="chart-pop"><strong>Lead Level:</strong> ${n.toFixed(2)} ppm</div>`;
 
   // Set the location of the label
   const labelW = leadLevelLabel.offsetWidth;
@@ -24,6 +24,8 @@ function setLeadLevel(n) {
   window.colorScale = colorScale;
   const color = colorScale(scaledValue/100);
   leadLevelLabel.style.backgroundColor = color;
+
+  leadLevelLabel.classList.remove('hidden');
 }
 
 export {

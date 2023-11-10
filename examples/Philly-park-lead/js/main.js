@@ -14,10 +14,13 @@ const leadSamples = await soilLead.json();
 const cityBoundary = await fetch('data/City_Limits.geojson');
 const cityLimits = await cityBoundary.json();
 
+// make sure you call event bus before all the functions
+const events = new EventTarget(); // events object here is the event bus
+
 // checkbox filtering
 const parkCheckbox = document.querySelector(`#by-park`);
 const addressCheckbox = document.querySelector(`#by-address`);
-initializeAddressEntry();
+initializeAddressEntry(events); // remember to add events in main as well
 parkCheckbox.addEventListener('change', () => {
   if (parkCheckbox.checked) {
     initializeParkEntry(parks, events);
@@ -27,13 +30,27 @@ parkCheckbox.addEventListener('change', () => {
 });
 addressCheckbox.addEventListener('change', () => {
   if (addressCheckbox.checked) {
-    initializeAddressEntry();
+    initializeAddressEntry(events);
   } else {
     console.log('addressCheckbox is unchecked');
   }
 });
 
-const events = new EventTarget(); // events object here is the event bus
+// Clear button
+const clearButton = document.querySelector(`.cross-icon`);
+const inputBox = document.querySelector(`#entry`);
+clearButton.addEventListener('click', () => {
+  inputBox.value = '';
+  inputBox.focus();
+});
+
+// const parkEntry = document.querySelector('#entry');
+// const parkPopStyle = document.querySelector('.park-choices');
+// const addressPopStyle = document.querySelector('.address-choices');
+// if (parkEntry.value.toLowerCase() == ``) {
+//   parkPopStyle.classList.add('hidden'); // add a hidden label to "remove", style hidden in CSS
+//   addressPopStyle.classList.add('hidden');
+// }
 
 // make things avaliable in every file
 

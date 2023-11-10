@@ -178,20 +178,24 @@ function legendStyle(map) {
 // legend part END
 
 // back button part
+
 import { cityLayer } from './map.js'; // need to import cityLayer
+import { phillyParkLayer } from './map.js';
 import { setLeadLevel } from './chart.js';
 function backButtonStyle(map) {
   const backDiv = document.createElement('div');
   backDiv.classList.add('back-button'); // div class
+  backDiv.title = 'Back'; // this will be shown when cursor hover over the button
   backDiv.innerHTML = `<svg id="back" width="25px" height="20px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#3d3d3d" stroke="#3d3d3d" stroke-width="33.792"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#474747" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#474747" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg>`;
   // backDiv.innerHTML = `&lt;-`; // &lt; is <
-  const leadLevelLabel = document.querySelector('#lead-level-chart .level-label');
-  const leadText = document.getElementById('chart-text');
+
   backDiv.addEventListener('click', () => {
-    map.fitBounds(cityLayer.getBounds());
+    map.flyToBounds(cityLayer.getBounds());
+    phillyParkLayer.resetStyle();
     setLeadLevel(400);
-    console.log(leadText);
-    leadText.parentNode.removeChild(leadText);
+    const leadText = document.getElementById('chart-text'); // important: this should be after setleadlevel
+    leadText.parentNode.classList.add('hidden'); // add a hidden label to "remove", style hidden in CSS
+    // leadText.parentNode.removeChild(leadText);
   });
   return backDiv;
 }

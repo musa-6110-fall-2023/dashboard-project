@@ -80,22 +80,22 @@ a {
 }
 
 .right-side {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 500px;
     padding: 2vh;
     box-sizing: border-box;
 }
 
 .address-section {
-    border: 1px solid green;
-    height: 15%;
+    /* border: 1px solid green; */
+    height: 17%;
     padding: 1vh;
     box-sizing: border-box;
 }
 
 .park-list-section {
-    border: 1px solid orange;
-    height: 55%;
+    /* border: 1px solid orange; */
+    height: 53%;
     padding: 1vh;
     box-sizing: border-box;
     /* flexbox is easy to fill the mother componet */
@@ -107,13 +107,19 @@ a {
     /* overflow will add scroll bar */
     overflow: auto;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .lead-level-chart-wrapper {
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     height: 30%;
     width: 100%;
     box-sizing: border-box;
     position: relative;
     left: 0;
 }
+
+/* define "remove" status */
+.hidden {
+    display: none;
+  }

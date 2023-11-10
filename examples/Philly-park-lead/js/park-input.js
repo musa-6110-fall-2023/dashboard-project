@@ -6,13 +6,14 @@ function initializeParkEntry(parks, events) {
   if (parkEntry.mycustomfunc) { // first need to remove all exsting event listener on the search box to avoid duplicates
     parkEntry.removeEventListener('input', parkEntry.mycustomfunc);
   }
-  parkEntry.mycustomfunc = () => {
+  parkEntry.mycustomfunc = (evt) => {
     handleSearchboxInput(parks, events); // define customized attribute
   };
   parkEntry.addEventListener('input', parkEntry.mycustomfunc); // need to have a customized attribute to remove this event listener later
 }
 
 function handleSearchboxInput(parks, events) {
+  parkChoiceList.classList.remove('hidden'); // First remove the hidden style of ol
   console.log('handling park inputs');
   const lowerCaseValue = parkEntry.value.toLowerCase();
 
@@ -21,12 +22,14 @@ function handleSearchboxInput(parks, events) {
     if (lowerCaseValue != ``) {
       if (feature.properties.ASSET_NAME.toLowerCase().includes(lowerCaseValue) || feature.properties.SITE_NAME.toLowerCase().includes(lowerCaseValue)) {// make it case insensitive
         const lihtml = `
-        <li class="park-choices" data-parkid="${feature.id}"> 
+        <li data-parkid="${feature.id}"> 
           ${feature.properties.ASSET_NAME} - ${feature.properties.SITE_NAME}
         </li>
         `; // remember to add customized data attribute to have reference of the park ID for later use
         html += lihtml;
       }
+    } if (lowerCaseValue == ``) { // remove the ol style when there is no input
+      parkChoiceList.classList.add('hidden'); // add a hidden label to "remove", style hidden in CSS
     }
   }
   parkChoiceList.innerHTML = html;

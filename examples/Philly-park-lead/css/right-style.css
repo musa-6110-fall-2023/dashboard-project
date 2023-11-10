@@ -1,3 +1,5 @@
+/* filtering block styles */
+
 fieldset {
     FONT-WEIGHT: 400;
     font-size: 0.8rem;
@@ -8,18 +10,79 @@ fieldset {
     border-width: 1px;
 }
 
+#by-address,
+#by-park {
+    cursor: pointer;
+}
+
 legend {
     font-size: 0.9rem;
 }
 
-#entry {
-    margin-top: 0.5rem;
+.radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
+
+.input-choice{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input-choice span {
+    display: none;
+}
+
+.explain:hover + span {
+    display: block;
+    position: absolute;
+	width: 90px;
+	margin: 0px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: '#4f5b8c';
+    background: rgba(255, 255, 255, 0.8);
+	text-align: left;
+	border: 1px solid #a7a7a7;
+}
+
+#address-pop {
+    bottom: 85vh;
+	right: 130px;
+}
+
+#park-pop {
+    bottom: 85vh;
+	right: 30px;
+}
+
+.explain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    text-indent: 4px;
+}
+
+
+#address-radio {
+    margin-right: 10px;
+}
+
+/* park list style */
 
 .park-list {
     padding: 0;
     list-style: none;
     margin: 0;
+    border-bottom: 1px solid rgb(187, 186, 186);
+    border-top: 1px solid rgb(187, 186, 186);
 }
 
 #list-title {

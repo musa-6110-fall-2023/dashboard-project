@@ -68,27 +68,55 @@ function initializeMap(parks, leadSamples, cityLimits, events) { // remember to 
   };
   backView.addTo(map);
 
-  // modify map zoom when click buttons on the right
-  // call cutomized event
+  // change map and chart when inputting park nane or click on park list
   events.addEventListener('zoom-map', (evt) => {
     // match the clicked park by polygon ID of geojson file
     const ID = evt.detail.mapZoomSelect;
+    idToPark(ID);
+  });
+
+  // change map and chart when inputting address
+  events.addEventListener('address-zoom-map', (evt) => {
+    const lat = evt.detail.lat;
+    const lon = evt.detail.lon;
+    const addressPoint = turf.point([lon, lat]);
     phillyParkLayer.resetStyle();
-    phillyParkLayer.eachLayer((layer) => { // .eachLayer is to get each object from this layer
+
+    // need to loop through each shape to get center points because the turf function only take one shape each time
+    const parkCenters = [];
+    for (const park of parks.features) {
+      const parkCenter = turf.pointOnFeature(park);
+      parkCenter.properties = park.properties; // add all park properties to point properties (although we don't need it later)
+      parkCenter.id = park.id; // add the park ID to point feature
+      parkCenters.push(parkCenter);
+    }
+
+    // find nearest center point and use that to get the park shape
+    const parkNear = turf.nearestPoint(addressPoint, turf.featureCollection(parkCenters)); // truf function take turf feature collection, not just simple array
+    console.log(parkNear);
+    const ID = parkNear.id;
+    idToPark(ID);
+  });
+
+  // define a function for getting park shape from park ID and set the chart
+  function idToPark(ID) {
+    phillyParkLayer.resetStyle(); // clear all the red boundaries
+    phillyParkLayer.eachLayer((layer) => { // .eachLayer is to get each object from this layer; this is because we change geojson object into a leaflet layer; if it is a geojson, we don't need this function
       if (layer.feature.id == ID) { // still need feature, if not, it will be an array; the feature here is a leaflet attribute, which get each feature from geojson "features", not the geojson path
         // .fitBounds will just show the final results, .flyToBound is fancy
 
+        // specify the highlight color of zoomed in park
         layer.setStyle({
           stroke: true,
-          color: 'red',
+          color: '#FB4C38',
+          dashArray: '5 6',
           weight: 3,
         });
-        layer.bringToFront();
+        layer.bringToFront(); // this is because some of parks overlapped
 
         // set zoomin level
         const parkZoom = turf.buffer(layer.feature, 0.5); // calculate buffer, 0.2km
-        console.log(parkZoom)
-        const [minLon, minLat, maxLon, maxLat] =turf.bbox(parkZoom);
+        const [minLon, minLat, maxLon, maxLat] =turf.bbox(parkZoom); // this is because turf use bottom left and top right points but leaflet use top left and bottom right points as bounding box input
         map.flyToBounds([[minLat, minLon], [maxLat, maxLon]]);
 
         // updateSoilChart(layer.feature, leadSamples)
@@ -97,13 +125,13 @@ function initializeMap(parks, leadSamples, cityLimits, events) { // remember to 
         setLeadLevel(parkLead); // change the chart
       }
     });
-  });
+  }
 
   return map;
 }
 
-
 export {
   initializeMap,
   cityLayer,
+  phillyParkLayer,
 };

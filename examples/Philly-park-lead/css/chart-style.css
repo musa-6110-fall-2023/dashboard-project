@@ -5,6 +5,7 @@
   box-sizing: border-box;
   display:block;
   margin: 1vh;
+  margin-top: 1.5vh;
 }
 
 /* Bottom right chart style start */
