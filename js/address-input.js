@@ -21,6 +21,7 @@ async function handleAddressEntryChange(events) {
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${partialAddress}.json?bbox=${bbox}&access_token=${apiKey}`; // use ``
 
   // remove the ol style when there is no input
+  // have this before the fetch data from API to save energy from fetching empty data
   if (partialAddress == ``) {
     addressChoiceList.classList.add('hidden'); // add a hidden label to "remove", style hidden in CSS
     return;
@@ -28,8 +29,6 @@ async function handleAddressEntryChange(events) {
 
   const resp = await fetch(url); // use the url above to get a response
   const data = await resp.json(); // get data from reponse
-
-  
 
   let html = '';
   for (const feature of data.features) { // .feature is just select json contents to have an array
@@ -58,9 +57,11 @@ function handleAddressChoice(evt, events) {
   const lon = li.getAttribute('data-lon');
   // const lon = li.dataset.data-lon; // .dataset is get the attribute in html (get your customized attribute!)
 
-  const text = li.innerText;
+  // put the click selection text to the input box
+  const text = li.innerText; // .innerText is similar to innerHTML but only get the text content
   addressEntry.value = text;
-  addressChoiceList.classList.add('hidden');
+  addressChoiceList.classList.add('hidden'); // hide the list
+
   // define a customized event
   const addressLL = new CustomEvent('address-zoom-map', { detail: { lat: lat, lon: lon }}); // define your own event
   events.dispatchEvent(addressLL);
