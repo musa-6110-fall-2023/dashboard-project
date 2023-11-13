@@ -47,6 +47,9 @@ function handleParkChoice(evt, events) {
   console.log(li);
   const mapZoomSelect = li.dataset.parkid; // .dataset is get the attribute in html (get your customized attribute!)
 
+  const text = li.innerText;
+  parkEntry.value = text;
+  parkChoiceList.classList.add('hidden');
   // define a customized event
   const zoomId = new CustomEvent('zoom-map', { detail: { mapZoomSelect }}); // define your own event
   events.dispatchEvent(zoomId);

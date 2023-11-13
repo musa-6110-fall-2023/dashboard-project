@@ -41,6 +41,7 @@ const clearButton = document.querySelector(`.cross-icon`);
 const inputBox = document.querySelector(`#entry`);
 clearButton.addEventListener('click', () => {
   inputBox.value = '';
+  inputBox.dispatchEvent(new InputEvent('input'));
   inputBox.focus();
 });
 
