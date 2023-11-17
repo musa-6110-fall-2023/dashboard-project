@@ -20,6 +20,9 @@ function addPointsToMap(bizpoints) {
   for (const point of bizpoints.features) {
     const [lon, lat] = point.geometry.coordinates;
     const name = point.properties.Business;
+    const biztype = point.properties["Type of Business"];
+    const address = point.properties.Address;
+    const phone = point.properties["Phone Number"];
     //var icon_design = L.Icon({iconUrl: './purple.png', iconSize: [32,32]})
     const marker = L.circleMarker([lat, lon], {
       radius: 3,
@@ -27,7 +30,7 @@ function addPointsToMap(bizpoints) {
       alt: name,
      // icon: iconDesign,
     });
-    marker.bindTooltip(name);
+    marker.bindTooltip(`<b>${name}</b><br><em>${biztype}<br>${address}<br>${phone}`);
     dataLayer.addLayer(marker);
   };
 }

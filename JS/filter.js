@@ -30,17 +30,18 @@ function initFilters(bizpoints, map) {
         for (const point of filteredBusinesses) {
           const [lon, lat] = point.geometry.coordinates;
           const name = point.properties.Business;
-
+          const biztype = point.properties["Type of Business"];
+          const address = point.properties.Address;
+          const phone = point.properties["Phone Number"];
           const marker = L.circleMarker([lat, lon], {
               radius: 3,
-              title: name,
               fillColor: 'red',
               color: 'red',
               alt: name,
               // Use the same styling options as in addPointsToMap in map.js
           });
 
-          marker.bindTooltip(name);
+          marker.bindTooltip(`<b>${name}</b><br><em>${biztype}<br>${address}<br>${phone}`);
           map.dataLayer.addLayer(marker);
         }
 
