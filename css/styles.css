@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap");
+
+html{
+    font-family: "Open Sans", sans-serif;
+}
+
+#map{
+    height:700px;
+    width:60%;
+    margin-left: 10px;
+    
+}
+
+h1 {margin-left:10px;
+    font-weight:300;
+    font-style:italic;
+}
+
+h2{font-weight:300;
+    font-style:italic;
+    color:lightseagreen;
+    margin-bottom: 0;
+}
+
+main{
+    display:flex;
+    flex-direction:row;
+    margin-bottom: 50px;
+}
+
+.address-input{    
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+input[type="text"]{
+    border: 1px solid lightblue;
+    width:100%;    
+    height: 50px;
+    font-size: 100%;
+}
+
+
+.list-input{
+    border: 1px solid lightpink;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+.right-side{
+    width:700px;
+    margin-left: 30px;
+    display:grid;
+
+}
+
+label{display:block}
+
+.biz-filters {column-count:2;
+    width:600px;
+}
+
+
+.point-list{
+    padding: 0.2em;;
+    list-style:none;
+}
+
+.point-name{
+    margin-bottom:1rem;
+    margin-left:0.5rem;
+    
+}
+
+
+.address{
+    display:inline;
+    font-style:italic;
+}
+
+.phone-number{
+    margin-left:0.5rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+    display:inline;
+    border: 1px solid lightblue;
+    border-radius: 1rem;
+    padding-left:1rem;
+    padding-right: 1rem;
+    background-color: #eee;
+    font-style: italic;
+}
+
+.point-name{
+    margin-bottom:1rem;
+    margin-top: 1rem;
+}
+
+#address-choices li:hover {
+    background-color: lightcyan;
+    cursor: pointer;
+}

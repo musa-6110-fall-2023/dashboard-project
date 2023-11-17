@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Union Sq.</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+
+    <body>
+    <header>
+        <h1>Navigating Union Square</h1>
+    </header>
+    
+    <main>
+        <div id="map"></div>
+        <div class="right-side">
+        
+            <h2> <input type="checkbox" name="Food & Drink"> Food & Drink</h2>
+            <div class="biz-filters">
+                <label> <input type="checkbox" name="biz-filters" value="Bars and Lounges"> Bars and Lounges</label>
+                <label> <input type="checkbox" name="biz-filters" value="Casual Eateries"> Casual Eateries</label>
+                <label> <input type="checkbox" name="biz-filters" value="Groceries and Liquors"> Groceries and Liquors</label>
+                <label> <input type="checkbox" name="biz-filters" value="Restaurants"> Restaurants</label>
+            </div>
+
+            <h2>Retails</h2>
+            <div class="biz-filters">
+                <label> <input type="checkbox" name="biz-filters" value="Apparel and Footwear"> Apparel and Footwear</label>
+                <label> <input type="checkbox" name="biz-filters" value="Beauty"> Beauty</label>
+                <label> <input type="checkbox"> Electronics and Video</label>
+                <label> <input type="checkbox"> Entertainment, Music & Games</label>
+                <label> <input type="checkbox"> Gifts and Florists</label>
+                <label> <input type="checkbox"> Home Furnishings</label>
+                <label> <input type="checkbox"> Office Supplies and Stationary</label>
+                <label> <input type="checkbox"> Optical</label>
+                <label> <input type="checkbox"> Pharmacies</label>
+            </div>
+
+            <h2>Services</h2>
+            <div class="biz-filters">
+                <label> <input type="checkbox"> Banks and Finances</label>
+                <label> <input type="checkbox"> Cleaners and Shoe Repair</label>
+                <label> <input type="checkbox"> Health and Fitness</label>
+                <label> <input type="checkbox"> Lodging </label>
+                <label> <input type="checkbox"> Medical and Veterinary</label>
+                <label> <input type="checkbox"> Spas and Salons</label>
+            </div>
+
+            <h2>Points of Interest</h2>
+            <div class="biz-filters">
+                <label> <input type="checkbox"> Arts and Leisure</label>
+                <label> <input type="checkbox"> Education</label>
+                <label> <input type="checkbox"> Landmarks</label>
+                <label> <input type="checkbox"> Theaters and Cinemas</label>
+            </div>
+
+                <h2>Parking</h2>
+            <div class="biz-filters">
+                <label> <input type="checkbox"> Parking</label>
+            </div>
+
+  
+
+        </div>
+        
+    </main>
+
+    <section class="address-input">
+        <input type="text" name="address-filter" id="address-filter" placeholder="Enter Address to Search...">
+        <ol id="address-choices" name="address-choices"> </ol>
+    </section>
+
+    <section class="address-input">
+        <input type="text" name="biz-filter" id="biz-filter" placeholder="Enter Biz to Search...">
+        <ol id="address-choices" name="address-choices"> </ol>
+    </section>
+
+    <section class="list-input">
+        <ol class="point-list">
+            <li>
+                <div class="point-name">point name</div>
+                <div class="phone-number">phone number</div>
+                <div class="address">address</div>
+            </li>
+    </section>
+
+        <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+        <!-- Lodash for useful functions -->
+    <script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
+
+        <!-- The project's main JavaScript module -->
+    <script src="js/main.js" type="module"></script>
+    </body>
+
+
+</html>
