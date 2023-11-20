@@ -27,3 +27,5 @@ function addPointsToList(bizpoints) {
 export {
     initializeList,
 }
+
+

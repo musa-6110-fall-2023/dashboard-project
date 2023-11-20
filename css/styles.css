@@ -33,6 +33,12 @@ main{
     margin-left: 10px;
 }
 
+
+.biz-input{    
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 input[type="text"]{
     border: 1px solid lightblue;
     width:100%;    
