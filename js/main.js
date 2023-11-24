@@ -36,15 +36,6 @@ addressCheckbox.addEventListener('change', () => {
   }
 });
 
-// Clear button
-const clearButton = document.querySelector(`.cross-icon`);
-const inputBox = document.querySelector(`#entry`);
-clearButton.addEventListener('click', () => {
-  inputBox.value = '';
-  inputBox.dispatchEvent(new InputEvent('input'));
-  inputBox.focus();
-});
-
 // const parkEntry = document.querySelector('#entry');
 // const parkPopStyle = document.querySelector('.park-choices');
 // const addressPopStyle = document.querySelector('.address-choices');
@@ -52,6 +43,7 @@ clearButton.addEventListener('click', () => {
 //   parkPopStyle.classList.add('hidden'); // add a hidden label to "remove", style hidden in CSS
 //   addressPopStyle.classList.add('hidden');
 // }
+
 
 // make things avaliable in every file
 

@@ -181,6 +181,8 @@ function legendStyle(map) {
 
 import { cityLayer } from './map.js'; // need to import cityLayer
 import { phillyParkLayer } from './map.js';
+import { currentLocationLayer } from './map.js';
+import { routeLayer } from './map.js';
 import { setLeadLevel } from './chart.js';
 function backButtonStyle(map) {
   const backDiv = document.createElement('div');
@@ -190,19 +192,41 @@ function backButtonStyle(map) {
   // backDiv.innerHTML = `&lt;-`; // &lt; is <
 
   backDiv.addEventListener('click', () => {
-    map.flyToBounds(cityLayer.getBounds());
-    phillyParkLayer.resetStyle();
-    setLeadLevel(400);
-    const leadText = document.getElementById('chart-text'); // important: this should be after setleadlevel
-    leadText.parentNode.classList.add('hidden'); // add a hidden label to "remove", style hidden in CSS
-    // leadText.parentNode.removeChild(leadText);
+    resetAllStyles(map);
   });
   return backDiv;
 }
+
+// Clear button
+function handleClearButton(map) {
+  const clearButton = document.querySelector(`.cross-icon`);
+  const inputBox = document.querySelector(`#entry`);
+  clearButton.addEventListener('click', () => {
+    inputBox.value = '';
+    inputBox.dispatchEvent(new InputEvent('input'));
+    inputBox.focus();
+    // do the same reset style as the back button
+    resetAllStyles(map);
+  });
+}
+
+// use this function for both clear and back button to clear all existing styles
+function resetAllStyles(map) {
+  map.flyToBounds(cityLayer.getBounds());
+  phillyParkLayer.resetStyle();
+  currentLocationLayer.clearLayers();
+  routeLayer.clearLayers();
+  setLeadLevel(400);
+  const leadText = document.getElementById('chart-text'); // important: this should be after setleadlevel
+  leadText.parentNode.classList.add('hidden'); // add a hidden label to "remove", style hidden in CSS
+  // leadText.parentNode.removeChild(leadText);
+}
+
 
 export {
   calLeadStyle,
   calParkStyle,
   legendStyle,
   backButtonStyle,
+  handleClearButton,
 };
