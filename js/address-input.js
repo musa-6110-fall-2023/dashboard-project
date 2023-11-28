@@ -7,12 +7,12 @@ function initializeAddressEntry(events) {
   }
   addressEntry.mycustomfunc = () => {
     handleAddressEntryChange(events); // should be in this format because I need to control what event in events; this wil "clean" the 'input' event input and use the later click event in the functions below
-  };
+  }; // if want to add debounce, need to add it here. wrap up the above function
   addressEntry.addEventListener('input', addressEntry.mycustomfunc);
 }
 
 // mapbox api
-async function handleAddressEntryChange(events) {
+async function handleAddressEntryChange(events) { // await fetch should always be in async function
   addressChoiceList.classList.remove('hidden'); // First remove the hidden style of ol
   console.log('handling address change');
   const partialAddress = addressEntry.value; // .value gets the text of the entry
@@ -53,7 +53,7 @@ async function handleAddressEntryChange(events) {
 function handleAddressChoice(evt, events) {
   const li = evt.target; // .target is just get the object you click
   console.log(li);
-  const lat = li.getAttribute('data-lat');
+  const lat = li.getAttribute('data-lat'); // This will always be string, not numbers
   const lon = li.getAttribute('data-lon');
   // const lon = li.dataset.data-lon; // .dataset is get the attribute in html (get your customized attribute!)
 
