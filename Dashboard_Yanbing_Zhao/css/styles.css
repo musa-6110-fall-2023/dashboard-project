@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.map {
+  height: 100vh;
+  background-color: aliceblue;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.checkbox-group div {
+  margin: 1%;
+}
+
+.checkbox-group label {
+  margin-left: 1%;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 20%;
+}
+
+#stadium-name-filter {
+  margin: 5%;
+  padding: 2%;
+}
+
+.scrollable-list {
+  margin:5%;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+#team-list {
+  margin: 5%;
+  padding: 0;
+  list-style: none;
+}
+
+#team-list li {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+}
