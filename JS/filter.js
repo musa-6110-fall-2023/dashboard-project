@@ -1,4 +1,6 @@
 import { initializeBizMap, addPointsToMap} from "./biz-map.js";
+import { initializeList, addPointsToList} from "./biz-list.js";
+
 
 function initFilters(bizpoints, map) {
     const filterCheckboxes = document.querySelectorAll('[name="biz-filters"]');
@@ -8,7 +10,6 @@ function initFilters(bizpoints, map) {
         applyFilters();
       });
     }
-
 
     function applyFilters() {
     let checkedBusinessTypes = [];
@@ -22,6 +23,7 @@ function initFilters(bizpoints, map) {
         // If no checkboxes are checked, display all points
         map.dataLayer.clearLayers();
         addPointsToMap(bizpoints);
+        addPointsToList(bizpoints);
     } else {
         // Filter and display points based on checked checkboxes
         let filteredBusinesses = bizpoints.features.filter(b => checkedBusinessTypes.includes(b.properties["Type of Business"]));
@@ -43,9 +45,9 @@ function initFilters(bizpoints, map) {
 
           marker.bindTooltip(`<b>${name}</b><br><em>${biztype}<br>${address}<br>${phone}`);
           map.dataLayer.addLayer(marker);
+          
         }
-
-
+        addPointsToList({features: filteredBusinesses}); 
          }
         } 
 

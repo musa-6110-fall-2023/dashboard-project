@@ -38,5 +38,5 @@ function addPointsToMap(bizpoints) {
 
 
   export{
-    initializeBizMap, addPointsToMap
+    initializeBizMap, addPointsToMap,
   }

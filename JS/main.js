@@ -11,4 +11,8 @@ const map = initializeBizMap(bizpoints);
 initializeList(bizpoints);
 initializeAddressFilter();
 initFilters(bizpoints, map);
-initializeSearch();
+initializeSearch(bizpoints);
+
+
+
+
