@@ -1,12 +1,17 @@
-// search.js
 function initializeSearch(placeInfo, events) {
     const searchBox = document.querySelector('#place-name-filter');
-    searchBox.addEventListener('input', (evt) => {
+    const searchButton = document.createElement('button');
+    searchButton.textContent = 'Search';
+    searchButton.id = 'search-button';
+
+    searchButton.addEventListener('click', () => {
         const showAccessibleOnly = document.getElementById('accessible-checkbox').checked;
         const filteredPlaces = updateFilteredPlaces(placeInfo, events, showAccessibleOnly);
         const newEvent = new CustomEvent('filter-places', { detail: { filteredPlaces } });
         events.dispatchEvent(newEvent);
     });
+
+    searchBox.insertAdjacentElement('afterend', searchButton);
 }
 
 function updateFilteredPlaces(placeInfo, events, showAccessibleOnly) {
@@ -22,12 +27,10 @@ function updateFilteredPlaces(placeInfo, events, showAccessibleOnly) {
         for (const place of placeInfo.features) {
             const properties = place.properties;
 
-            // Accessibility filter
             if (showAccessibleOnly && properties.accessibility_code !== 'A') {
-                continue; // Skip if not accessible
+                continue; 
             }
 
-            // Place name filter
             if (properties && properties.placename && properties.placename.toLowerCase().includes(lowercaseValue)) {
                 filteredPlaces.push(place);
             }
@@ -37,15 +40,12 @@ function updateFilteredPlaces(placeInfo, events, showAccessibleOnly) {
     const newEvent = new CustomEvent('filter-places', { detail: { filteredPlaces } });
     events.dispatchEvent(newEvent);
 
-    // Move this line to update search results immediately after filtering
-    updateSearchResults(filteredPlaces);
-
     return filteredPlaces;
 }
 
-
 function updateSearchResults(filteredPlaces) {
-    const searchResultsContainer = document.getElementById('search-results');
+    const searchResultsContainer = document.getElementById('search-results-container');
+
     searchResultsContainer.innerHTML = '';
 
     if (filteredPlaces.length === 0) {
@@ -53,8 +53,20 @@ function updateSearchResults(filteredPlaces) {
         return;
     }
 
-    const resultList = document.createElement('ul');
+    const uniquePlaces = new Map();
+
     filteredPlaces.forEach(place => {
+        const placeName = place.properties.placename;
+
+        if (!uniquePlaces.has(placeName)) {
+            uniquePlaces.set(placeName, place);
+        }
+    });
+
+    const resultList = document.createElement('ul');
+    const uniquePlacesArray = Array.from(uniquePlaces.values());
+
+    uniquePlacesArray.forEach(place => {
         const listItem = document.createElement('li');
         listItem.textContent = place.properties.placename;
         resultList.appendChild(listItem);
@@ -63,7 +75,6 @@ function updateSearchResults(filteredPlaces) {
     searchResultsContainer.appendChild(resultList);
 }
 
-// Event listener for checkbox change
 const accessibleCheckbox = document.getElementById('accessible-checkbox');
 accessibleCheckbox.addEventListener('change', function () {
     const showAccessibleOnly = this.checked;
@@ -72,4 +83,6 @@ accessibleCheckbox.addEventListener('change', function () {
 
 export {
     initializeSearch,
+    updateFilteredPlaces,
+    updateSearchResults,
 };
