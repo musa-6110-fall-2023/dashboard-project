@@ -1,0 +1,38 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>June Jaegal, Engagement Project</title>
+    <!-- Add your leaflet and other necessary CSS links here -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body>
+    <header>
+        <img id="logo" src="data/phillylogo.png" alt="Logo">
+        <h1>Polling Places in Philadelphia</h1>
+    </header>
+    <main>
+        <div id="map" class="map"></div>
+        <div class="search-and-reviews">
+            <input type="text" id="place-name-filter" placeholder="Search By Place Name">
+            <div id="search-results"></div>
+            <label>
+                <input type="checkbox" id="accessible-checkbox">
+                Accessible Polling Place
+            </label>
+            <div id="review-container"></div>
+            <div id="search-results-container"></div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
