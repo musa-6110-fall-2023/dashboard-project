@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Center City</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+
+    <!-- The project's main CSS module -->
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <h1>Center City Eats</h1>
+    <div id="eats-map"></div>
+
+    <div id="eats-filters">
+      <h3>Neighborhood</h3>
+      <label><input type="checkbox" class="cb" id= "Rittenhouse" name="eats-filter-nhood" value="Rittenhouse"> Rittenhouse</label>
+      <label><input type="checkbox"class="cb" id= "Chinatown" name="eats-filter-nhood" value="Chinatown"> Chinatown</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-nhood" value="Midtown Village"> Midtown Village</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-nhood" value="Washington Square West"> Washington Square</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-nhood" value="Old City"> Old City</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-nhood" value="Society Hill"> Society Hill</label>
+     
+      <h3>Cuisine</h3>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="American"> American</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Chinese"> Chinese</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Coffee"> Coffee</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Desserts"> Desserts</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Italian"> Italian</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Japanese"> Japanese</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Middle Eastern"> Middle Eastern</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Mediterranean"> Mediterranean</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Sandwhiches"> Sandwhiches</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Seafood"> Seafood</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Southern"> Southern</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Szechuan"> Szechuan</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Spanish"> Spanish</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Taiwanese"> Taiwanese</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-cuisine" value="Vietnamese"> Vietnamese</label>
+
+      <h3>Happy Hour</h3>
+      <label><input type="checkbox" class="cb" name="eats-filter-hh" value="Yes"> Yes</label>
+      <label><input type="checkbox" class="cb" name="eats-filter-hh" value="No"> No</label>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+
+    <!-- Lodash for useful functions -->
+    <script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
+
+    <!-- The project's main JavaScript module -->
+    <script src="js/main.js" type="module"></script>
+    
+  </body>
+</html>

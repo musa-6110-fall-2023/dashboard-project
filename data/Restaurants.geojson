@@ -1,0 +1,671 @@
+{
+    "type": "FeatureCollection",
+    "bounds": [
+      [
+        38.69559906940905, -9.230099411668961
+      ],
+      [
+        38.79611101619908, -9.089941635258585
+      ]
+    ],
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Rittenhouse",
+          "Name": "Kfar", 
+          "Type": "Café", 
+          "Price": "$$",
+          "Cuisine": "Mediterranean", 
+          "Best For": "Brunch, Lunch",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.17218492935483, 39.9514385432747
+          ],
+          "type": "Point"
+        },
+        "id": 1
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Rittenhouse",
+          "Name": "Amma’s South Indian Cuisine", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "Indian", 
+          "Best For": "Lunch, Dinner",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.16642147530601, 39.950910286035196
+          ],
+          "type": "Point"
+        },
+        "id": 2
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Rittenhouse",
+          "Name": "Vernick Food & Drink", 
+          "Type": "Café", 
+          "Price": "$$$$",
+          "Cuisine": "American", 
+          "Best For": "Dinner",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.17488740047824, 39.95086174304037
+            
+          ],
+          "type": "Point"
+        },
+        "id": 3
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Rittenhouse",
+          "Name": "DanDan", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "Taiwanese", 
+          "Best For": "Dinner",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.16759060112588, 39.95024145519472
+            
+          ],
+          "type": "Point"
+        },
+        "id": 4
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Rittenhouse",
+          "Name": "Via Locusta", 
+          "Type": "Restaurant", 
+          "Price": "$$$",
+          "Cuisine": "Italian", 
+          "Best For": "Brunch, Lunch, Dinner",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.17024402703113, 39.9490011381667
+            
+          ],
+          "type": "Point"
+        },
+        "id": 5
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Rittenhouse",
+          "Name": "Her Place Supper Club", 
+          "Type": "Restaurant", 
+          "Price": "$$$$",
+          "Cuisine": "American", 
+          "Best For": "Dinner",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.17014644085218, 39.950794490762846
+           
+          ],
+          "type": "Point"
+        },
+        "id": 6
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Rittenhouse",
+          "Name": "a.Kitchen", 
+          "Type": "Restaurant", 
+          "Price": "$$$",
+          "Cuisine": "American", 
+          "Best For": "Brunch, Lunch, Dinner",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.17041152965916, 39.95038331853398 
+            
+          ],
+          "type": "Point"
+        },
+        "id": 7
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Rittenhouse",
+          "Name": "a.Bar", 
+          "Type": "Bar", 
+          "Price": "$$",
+          "Cuisine": "American", 
+          "Best For": "Cocktails",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.17041152965916, 39.95038331853398
+            
+          ],
+          "type": "Point"
+        },
+        "id": 8
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Rittenhouse",
+          "Name": "Superfolie", 
+          "Type": "Bar", 
+          "Price": "$",
+          "Cuisine": "American", 
+          "Best For": "Cocktails",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.16829100048234, 39.947207243038285
+            
+          ],
+          "type": "Point"
+        },
+        "id": 9
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Rittenhouse",
+          "Name": "Friday Saturday Sunday", 
+          "Type": "Restaurant, Bar", 
+          "Price": "$$$$",
+          "Cuisine": "American", 
+          "Best For": "Dinner",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.17603107372473, 39.948944544443336
+            
+          ],
+          "type": "Point"
+        },
+        "id": 10
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Chinatown",
+          "Name": "Heung Fa Chun Sweet House", 
+          "Type": "Restaurant", 
+          "Price": "$",
+          "Cuisine": "Chinese", 
+          "Best For": "Breakfast, Desserts",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.15628950048361, 39.95401624302881
+            
+          ],
+          "type": "Point"
+        },
+        "id": 11
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Chinatown",
+          "Name": "Vietnam Restaurant", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "Mediterranean", 
+          "Best For": "Lunch, Dinner",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.15721271241053, 39.95631990116107
+            
+          ],
+          "type": "Point"
+        },
+        "id": 12
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Chinatown",
+          "Name": "Emei", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "Szechuan", 
+          "Best For": "Noodles",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.15542662997194, 39.953594794561184
+            
+          ],
+          "type": "Point"
+        },
+        "id": 13
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Chinatown",
+          "Name": "Nan Zhou Hand Drawn Noodle House", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "Chinese", 
+          "Best For": "Noodles",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.1568535014076, 39.955176470541524
+            
+          ],
+          "type": "Point"
+        },
+        "id": 14
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Chinatown",
+          "Name": "Sang Kee Peking Duck House", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "Desserts", 
+          "Best For": "Dessert",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.15424037098686, 39.95645629081923
+            
+          ],
+          "type": "Point"
+        },
+        "id": 15
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Chinatown",
+          "Name": "Mango Mango Dessert", 
+          "Type": "Café", 
+          "Price": "$$",
+          "Cuisine": "Mediterranean", 
+          "Best For": "Brunch, Lunch",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.17218492935483, 39.9514385432747
+            
+          ],
+          "type": "Point"
+        },
+        "id": 16
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Midtown Village",
+          "Name": "Vetri Cucina", 
+          "Type": "Restaurant", 
+          "Price": "$$$$",
+          "Cuisine": "Italian", 
+          "Best For": "Dinner",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.163166471291, 39.94673406798498
+            
+          ],
+          "type": "Point"
+        },
+        "id": 17
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Midtown Village",
+          "Name": "Vedge", 
+          "Type": "Restaurant", 
+          "Price": "$$$",
+          "Cuisine": "Vegan", 
+          "Best For": "Dinner",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.16138890109421, 39.94787459295638
+            
+          ],
+          "type": "Point"
+        },
+        "id": 18
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Midtown Village",
+          "Name": "Double Knot", 
+          "Type": "Restaurant", 
+          "Price": "$$$",
+          "Cuisine": "Japanese", 
+          "Best For": "Sushi",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.16211262884077, 39.94962326275534
+            
+          ],
+          "type": "Point"
+        },
+        "id": 19
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Washington Square West",
+          "Name": "Middle Child", 
+          "Type": "Luncheonette", 
+          "Price": "$$",
+          "Cuisine": "Sandwiches", 
+          "Best For": "Lunch ",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.15940067201922, 39.94715383140681
+            
+          ],
+          "type": "Point"
+        },
+        "id": 20
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Washington Square West",
+          "Name": "Bud & Marilyn's", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "American", 
+          "Best For": "Brunch, Lunch, Dinner",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.16229369999877, 39.947787912523
+            
+          ],
+          "type": "Point"
+        },
+        "id": 21
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Washington Square West",
+          "Name": "Kinme", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "Japanese", 
+          "Best For": "Sushi",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.16017587222424, 39.9477318926782
+            
+          ],
+          "type": "Point"
+        },
+        "id": 22
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Washington Square West",
+          "Name": "Thank You Thank You", 
+          "Type": "Coffee Shop", 
+          "Price": "$",
+          "Cuisine": "Coffee", 
+          "Best For": "Coffee",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.15265757114953, 39.9485035122379 
+            
+          ],
+          "type": "Point"
+        },
+        "id": 23
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Old City",
+          "Name": "Han Dynasty", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "Szechuan", 
+          "Best For": "Lunch, Dinner",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.14375976866484, 39.948521056032064
+            
+          ],
+          "type": "Point"
+        },
+        "id": 24
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Old City",
+          "Name": "Sonny's Famous Steaks", 
+          "Type": "Luncheonette", 
+          "Price": "$$",
+          "Cuisine": "Sandwiches", 
+          "Best For": "Lunch",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.14480132997444, 39.94981259364906
+            
+          ],
+          "type": "Point"
+        },
+        "id": 25
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Old City",
+          "Name": "Fork", 
+          "Type": "Restaurant", 
+          "Price": "$$$",
+          "Cuisine": "American", 
+          "Best For": "Dinner",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.14611327116314, 39.94999811238857
+           
+          ],
+          "type": "Point"
+        },
+        "id": 26
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Old City",
+          "Name": "The Olde Bar", 
+          "Type": "Restaurant", 
+          "Price": "$$$",
+          "Cuisine": "Seafood", 
+          "Best For": "Cocktails",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.14409170140102, 39.94687526755574
+            
+          ],
+          "type": "Point"
+        },
+        "id": 27
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Old City",
+          "Name": "Amina Philly", 
+          "Type": "Restaurant", 
+          "Price": "$$$",
+          "Cuisine": "Southern", 
+          "Best For": "Brunch",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.1427490992467, 39.94813354310813
+           
+          ],
+          "type": "Point"
+        },
+        "id": 28
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Old City",
+          "Name": "Sassafras", 
+          "Type": "Bar", 
+          "Price": "$$",
+          "Cuisine": "American ", 
+          "Best For": "Cocktails",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.14406094272421, 39.94878694257139
+           
+          ],
+          "type": "Point"
+        },
+        "id": 29
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Society Hill",
+          "Name": "Sassafras", 
+          "Type": "Bar", 
+          "Price": "$$",
+          "Cuisine": "American ", 
+          "Best For": "Cocktails",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.14406094272421, 39.94878694257139
+            
+          ],
+          "type": "Point"
+        },
+        "id": 30
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Society Hill",
+          "Name": "Zahav", 
+          "Type": "Restaurant", 
+          "Price": "$$$$",
+          "Cuisine": "Middle Eastern", 
+          "Best For": "Dinner",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.14501620017397, 39.9462414682732 
+           
+          ],
+          "type": "Point"
+        },
+        "id": 31
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Society Hill",
+          "Name": "Bloomsday Café", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "Spanish", 
+          "Best For": "Dinner",
+          "HappyHour": "Yes"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.14556004188131, 39.94274443822489
+            
+          ],
+          "type": "Point"
+        },
+        "id": 32
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "Neighborhood": "Society Hill",
+          "Name": "Pizzeria Stella", 
+          "Type": "Restaurant", 
+          "Price": "$$",
+          "Cuisine": "Italian", 
+          "Best For": "Lunch, Dinner",
+          "HappyHour": "No"
+        },
+        "geometry": {
+          "coordinates": [
+            -75.14568240110086, 39.94240819163907
+           
+          ],
+          "type": "Point"
+        },
+        "id": 33
+      }
+    ]
+  }
