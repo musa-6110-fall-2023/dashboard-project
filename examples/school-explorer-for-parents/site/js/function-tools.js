@@ -1,4 +1,11 @@
 /**
+ * NOTE:
+ * ~~~~~
+ * The following functions are re-implementations of functions that are
+ * available from the Lodash library: https://lodash.com/
+ */
+
+/**
  * Creates an array of values by a particular attribute value (denoted by
  * `key`) off of each object in an input array. For example:
  *
