@@ -16,6 +16,7 @@ function initializeBizMap(bizpoints) {
     return map;
   }
 
+ 
 function addPointsToMap(bizpoints) {
   for (const point of bizpoints.features) {
     const [lon, lat] = point.geometry.coordinates;
@@ -30,13 +31,40 @@ function addPointsToMap(bizpoints) {
       alt: name,
      // icon: iconDesign,
     });
-    marker.bindTooltip(`<b>${name}</b><br><em>${biztype}<br>${address}<br>${phone}`);
+    
+
+    const tooltipContent = `<b>${name}</b><br><em>${biztype}<br>${address}<br>${phone}`;
+
+    // Create a container for tooltip content
+    const tooltipContainer = L.DomUtil.create('div', 'tooltip-container');
+    
+    // Set the content of the tooltip
+    marker.bindTooltip(tooltipContainer, { permanent: false, interactive: true });
+    tooltipContainer.innerHTML = tooltipContent;
+
+    // Create a favorite button
+    const favoriteButton = L.DomUtil.create('button', 'favorite-button');
+    favoriteButton.innerHTML = '+';
+    favoriteButton.addEventListener('click', () => {
+      alert(`Added ${name} to Favorites!`);
+    });
+
+    // Append the button to the tooltip container
+    tooltipContainer.appendChild(favoriteButton);
+
+    marker.on('click', function () {
+      if (marker.isTooltipOpen()) {
+        marker.closeTooltip();
+      } else {
+        marker.openTooltip();
+      }
+    });
+
+
     dataLayer.addLayer(marker);
-  };
-}
-
-
-
-  export{
-    initializeBizMap, addPointsToMap,
   }
+}
+  
+export{
+  initializeBizMap, addPointsToMap, 
+}

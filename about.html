@@ -1,19 +1,111 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <title>Union Sq.</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
 
-<head>
 
-
-</head>
-
-
-<body>
-
-
+    <body>
+    <header id="header">
+        <div class="inner">
+            <nav id="nav">
+                <ul>
+                    <li><a href="about.html"> About</a></li>
+                    <li><a href="index.html"> Dashboard </a></li>
+                    <li><a href="biz-owner.html"> For Business Owners</a></li>   
+                </ul> 
+            </nav>
+            <h1>Navigating Union Square</h1>
+        </div>
+        
+    </header>
     
-</body>
+    <main>
+        <div id="map"></div>
+        <div class="dropdown">
+            <div class="dropdown-content" id="filterOptions">
+            <h2> <input type="checkbox" name="Food & Drink"> Food & Drink</h2>
+                <div class="biz-filters">
+                    <label> <input type="checkbox" name="biz-filters" value="Bars and Lounges"> Bars and Lounges</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Casual Eateries"> Casual Eateries</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Groceries and Liquors"> Groceries and Liquors</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Restaurants"> Restaurants</label>
+                </div>
+    
+            <h2>Retails</h2>
+                <div class="biz-filters">
+                    <label> <input type="checkbox" name="biz-filters" value="Apparel and Footwear"> Apparel and Footwear</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Beauty"> Beauty</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Electronics and Video"> Electronics and Video</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Entertainment, Music & Games"> Entertainment, Music & Games</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Gifts and Florists"> Gifts and Florists</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Home Furnishings"> Home Furnishings</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Office Supplies and Stationary"> Office Supplies and Stationary</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Optical"> Optical</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Pharmacies"> Pharmacies</label>
+                </div>
+    
+            <h2>Services</h2>
+                <div class="biz-filters">
+                    <label> <input type="checkbox" name="biz-filters" value="Banks and Finances"> Banks and Finances</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Cleaners and Shoe Repair"> Cleaners and Shoe Repair</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Health and Fitness"> Health and Fitness</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Lodging"> Lodging </label>
+                    <label> <input type="checkbox" name="biz-filters" value="Medical and Veterinary"> Medical and Veterinary</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Spas and Salons"> Spas and Salons</label>
+                </div>
+    
+            <h2>Points of Interest</h2>
+                <div class="biz-filters">
+                    <label> <input type="checkbox" name="biz-filters" value="Arts and Leisure"> Arts and Leisure</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Education"> Education</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Landmarks"> Landmarks</label>
+                    <label> <input type="checkbox" name="biz-filters" value="Theaters and Cinemas"> Theaters and Cinemas</label>
+                </div>
+    
+            <h2>Parking</h2>
+                <div class="biz-filters">
+                    <label> <input type="checkbox" name="biz-filters" value="Parking"> Parking</label>
+                </div>
+            </div>
+            
+        </div>
 
+
+
+
+
+        <div class="right-side">
+            <h1 id="unionsq">Union Sq. in Manhattan, NYC</h1>
+            <p> Insert Introduction to this neighborhood</p>
+            
+  
+
+        </div>
+        
+
+
+
+   
+</main>
+
+        <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+        <!-- Lodash for useful functions -->
+    <script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
+
+        <!-- The project's main JavaScript module -->
+    <script src="js/main.js" type="module"></script>
+
+    </body>
 
 
 </html>

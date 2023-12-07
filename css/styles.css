@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap");
 #header {
-    padding: 2em 2em 2em 2em ;
+    padding: 0.5em 2em 0.5em 2em ;
     background-color: rgba(212, 242, 240, 0.313);
 }
 
@@ -34,18 +34,20 @@
                     border: 0;
                     font-weight:300;
                     font-style:italic;
+                    font-size:0.7em;
+                    color:black;
                 }
 html{
     font-family: "Open Sans", sans-serif;
 }
 
 main{
-    padding: 2em 2em 2em 2em ;
+    padding: 0.5em 2em 0.5em 2em ;
 }
 
 #map{
     height:700px;
-    width:60%;
+    width:100%;
     margin-left: 10px;
     
 }
@@ -55,10 +57,32 @@ h1 {margin-left:10px;
     font-style:italic;
 }
 
+
+    h1 #unionsq{
+        margin-top: 0em;
+        margin-bottom: 0em;
+        
+    }
+
+
 h2{font-weight:300;
+    font-size: 1em;
     font-style:italic;
     color:lightseagreen;
     margin-bottom: 0;
+    margin-left:1em;
+}
+
+
+
+p {
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+label{
+    font-weight: 100;
+    font-size:0.7em;
 }
 
 main{
@@ -81,20 +105,18 @@ main{
 input[type="text"]{
     border: 1px solid lightblue;
     width:100%;    
-    height: 50px;
-    font-size: 100%;
+    height: 30px;
+    font-size: 80%;
 }
 
 
 .list-input{
-    border: 1px solid lightpink;
     margin-right: 10px;
     margin-left: 10px;
 }
 
-
 .right-side{
-    width:700px;
+    width:500px;
     margin-left: 30px;
     display:grid;
 
@@ -103,17 +125,19 @@ input[type="text"]{
 label{display:block}
 
 .biz-filters {column-count:2;
-    width:600px;
+    width:400px;
+    margin-bottom: 1em;
+    margin-left:1em;
 }
 
 
 .point-list{
-    padding: 0.2em;;
+    padding: 0em;;
     list-style:none;
 }
 
 .point-name{
-    margin-bottom:1rem;
+    font-size: 0.9rem;
     margin-left:0.5rem;
     
 }
@@ -127,7 +151,7 @@ label{display:block}
 .phone-number{
     margin-left:0.5rem;
     margin-right: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     display:inline;
     border: 1px solid lightblue;
     border-radius: 1rem;
@@ -135,10 +159,11 @@ label{display:block}
     padding-right: 1rem;
     background-color: #eee;
     font-style: italic;
+    font-size:0.8rem;
 }
 
 .point-name{
-    margin-bottom:1rem;
+    margin-bottom:0.5rem;
     margin-top: 1rem;
 }
 
@@ -146,3 +171,34 @@ label{display:block}
     background-color: lightcyan;
     cursor: pointer;
 }
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Styling for the button */
+  .btn {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Styling for the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Styling for the checkbox labels */
+  .checkbox-label {
+    display: block;
+    margin: 8px;
+  }
+
