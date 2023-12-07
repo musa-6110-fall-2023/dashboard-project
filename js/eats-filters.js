@@ -12,62 +12,64 @@ function initializeFilters(eats, eventBus) {
   const hash = window.location.hash
   console.log(hash)
 
-   // Step 1: Remove the hash by using the "substring function"
-  const newHash = hash.substring(1).replace(/%20/g, ' ');
-  console.log(newHash)
+  if (hash) {
+    // Step 1: Remove the hash by using the "substring function"
+    const newHash = hash.substring(1).replace(/%20/g, ' ');
+    console.log(newHash)
 
-  //Step 2: Split the string into 2 separate strings using "split function" at the "&", leaving me with 2 separate strings
-  const [cuisineHash, nhoodHash, hhHash] = newHash.split("&");
-  console.log(cuisineHash)
-  console.log(nhoodHash)
-  console.log(hhHash)
+    //Step 2: Split the string into 2 separate strings using "split function" at the "&", leaving me with 2 separate strings
+    const [cuisineHash, nhoodHash, hhHash] = newHash.split("&");
+    console.log(cuisineHash)
+    console.log(nhoodHash)
+    console.log(hhHash)
 
-  // Step 3: Remove "cuisine=" from the string and split the rest of that string by ","
-  const newCuisineHash = cuisineHash.slice(8)
-  console.log(newCuisineHash)
+    // Step 3: Remove "cuisine=" from the string and split the rest of that string by ","
+    const newCuisineHash = cuisineHash.slice(8)
+    console.log(newCuisineHash)
 
-  // Step 4: Do the same for neighborhoods string
-  const newNhoodHash = nhoodHash.slice(13)
-  console.log(newNhoodHash)
+    // Step 4: Do the same for neighborhoods string
+    const newNhoodHash = nhoodHash.slice(13)
+    console.log(newNhoodHash)
 
-  // Step 5: Do this for hh Hash
-  const newhhHash = hhHash.slice(10)
-  console.log(newhhHash)
+    // Step 5: Do this for hh Hash
+    const newhhHash = hhHash.slice(10)
+    console.log(newhhHash)
 
-  // Step 5: This will leave us with an array of cuisines & an array of nhoods
-  const newestCuisineHash = newCuisineHash.split(",");
-  const newestNhoodHash = newNhoodHash.split(",");
-  const newesthhHash = newhhHash.split(",");
-  console.log(newestCuisineHash);
-  console.log(newestNhoodHash);
-  console.log(newesthhHash);
+    // Step 5: This will leave us with an array of cuisines & an array of nhoods
+    const newestCuisineHash = newCuisineHash.split(",");
+    const newestNhoodHash = newNhoodHash.split(",");
+    const newesthhHash = newhhHash.split(",");
+    console.log(newestCuisineHash);
+    console.log(newestNhoodHash);
+    console.log(newesthhHash);
 
-  // Step 6: Using the array of cuisines, loop over the array to look for the cuisine checkbox that matches that value, then cb.checked=true
-  
-  for (const cb of nhoodCheckboxes) {
-    if (newestNhoodHash.includes(cb.value)) {
-      cb.checked=true;
+    // Step 6: Using the array of cuisines, loop over the array to look for the cuisine checkbox that matches that value, then cb.checked=true
+
+    for (const cb of nhoodCheckboxes) {
+      if (newestNhoodHash.includes(cb.value)) {
+        cb.checked = true;
+      }
     }
-  }
-  
-  // Step 7: Repeat for cuisines
 
-  for (const cb of CuisineCheckboxes) {
-    if (newestCuisineHash.includes(cb.value)) {
-      cb.checked=true;
+    // Step 7: Repeat for cuisines
+
+    for (const cb of CuisineCheckboxes) {
+      if (newestCuisineHash.includes(cb.value)) {
+        cb.checked = true;
+      }
     }
-  }
 
-  // Step 8: Repeat for HH 
+    // Step 8: Repeat for HH 
 
-  for (const cb of happyHourCheckboxes) {
-    if (newesthhHash.includes(cb.value)) {
-      cb.checked=true;
+    for (const cb of happyHourCheckboxes) {
+      if (newesthhHash.includes(cb.value)) {
+        cb.checked = true;
+      }
     }
   }
 
   // // Step 8: Finally, filter the data using a pre-existing function
-   filterRestaurants();
+  filterRestaurants();
 
   // Create Neighborhood Checkbox Filter
 
