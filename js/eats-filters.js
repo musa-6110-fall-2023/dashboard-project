@@ -24,7 +24,7 @@ function initializeFilters(eats, eventBus) {
     console.log(hhHash)
 
     // Step 3: Remove "cuisine=" from the string and split the rest of that string by ","
-    const newCuisineHash = cuisineHash.slice(8)
+    const newCuisineHash = cuisineHash.slice(8) 
     console.log(newCuisineHash)
 
     // Step 4: Do the same for neighborhoods string
