@@ -6,6 +6,9 @@ function initializeFilters(eats, eventBus) {
 
 
   window.eatsCuisineFilters = CuisineCheckboxes;
+  window.nhoodFilters = nhoodCheckboxes;
+  window.happyHourFilters = happyHourCheckboxes;
+
 
   //Making unique URLs
 
@@ -257,6 +260,7 @@ function initializeFilters(eats, eventBus) {
           detail: filteredData
         })
       eventBus.dispatchEvent(newEvent5)
+      makeNewURL();
     }
   }
 
