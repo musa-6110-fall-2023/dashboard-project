@@ -103,7 +103,7 @@ function updateMapStations(stations, stationsLayer) {
 
   // ===============================================================================> 2.3 marker configuration including shape, size and anchor
   const stationIcon = L.icon({
-    iconUrl: 'images/landmarker.png',
+    iconUrl: '_images/landmarker.png',
     iconSize: [32, 40], // size of the icon
     iconAnchor: [16, 20], // point of the icon which will correspond to marker's location
     popupAnchor: [0, -35], // point from which the popup should open relative to the iconAnchor
