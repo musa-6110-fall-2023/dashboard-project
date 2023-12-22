@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <!--------------------------------------------------------------------------- 1.sets the webpage renders well on all pages including desktop and mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />  
+
+    <!--------------------------------------------------------------------------- 2.set up CSS library, both from leaflet and local -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">  
+    <link rel="stylesheet" href="css/styles.css"> 
+  </head> 
+  <body>
+    <main>
+      <div class="left-side">  <!--------------------------3.1 left side bar -->
+        <input type="text" id="station-name-filter" placeholder="Search by station name..."> 
+        <ol id="station-list"></ol> 
+      </div>
+      <div id="map" class="map"></div>  <!-----------------3.2 map -->
+    </main>
+
+    <!--------------------------------------------------------------------------- 4.set up js library, from Turf, leaflet and local -->
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script> 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> 
+    <script type="module" src="js/main.js"></script> 
+  </body>
+</html>
+
+
+
+
+
+
+
