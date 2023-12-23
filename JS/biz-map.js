@@ -42,16 +42,6 @@ function addPointsToMap(bizpoints) {
     marker.bindTooltip(tooltipContainer, { permanent: false, interactive: true });
     tooltipContainer.innerHTML = tooltipContent;
 
-    // Create a favorite button
-    const favoriteButton = L.DomUtil.create('button', 'favorite-button');
-    favoriteButton.innerHTML = '+';
-    favoriteButton.addEventListener('click', () => {
-      alert(`Added ${name} to Favorites!`);
-    });
-
-    // Append the button to the tooltip container
-    tooltipContainer.appendChild(favoriteButton);
-
     marker.on('click', function () {
       if (marker.isTooltipOpen()) {
         marker.closeTooltip();

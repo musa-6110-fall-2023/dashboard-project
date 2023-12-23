@@ -81,11 +81,7 @@
 
 
         <div class="right-side">
-            <h1>Promote your business here!</h1>
-            <section class="address-input">
-                <input type="text" name="address-filter" id="address-filter" placeholder="Enter Address to Search...">
-                <ol id="address-choices" name="address-choices"> </ol>
-            </section>
+            <button id="Biz-Promotion" onclick="openForm()">Promote your business here!</button>
          
           <section class="biz-input">
             <input type="text" name="biz-search-filter" id="biz-search-filter" placeholder="Enter Business Name to Search...">
@@ -105,12 +101,46 @@
         </div>
         
 
+        <!-- The pop-up form -->
+        <div id="popup-form">
+            <h2>Submission Form</h2>
+            <form>
+                <!-- Your form fields go here -->
+                <label for="nameInput">Name:</label>
+                <input type="text" id="nameInput" name="nameInput">
+            
+                <label for="emailInput">Email:</label>
+                <input type="email" id="emailInput" name="emailInput">
+            
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" name="phone-number">
+            
+                <label for="Message">Message:</label>
+                <textarea id="Message" name="Message"></textarea>
 
+                <input type="submit" value="Submit" id="submitButton" onclick="submitForm(event)">
+            </form>
+            <button onclick="closeForm()">Close</button>
+
+        </div>
+
+        <script> function openForm() {
+            document.getElementById("popup-form").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("popup-form").style.display = "none";
+        }
+        </script>
+       
 
    
 </main>
 
-        <!-- Leaflet JavaScript -->
+<div id="storedDataSection"></div>
+    
+
+<!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
@@ -119,7 +149,7 @@
     <script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
 
         <!-- The project's main JavaScript module -->
-    <script src="js/main.js" type="module"></script>
+    <script src="JS/main_biz_owner.js" type="module"></script>
 
     </body>
 

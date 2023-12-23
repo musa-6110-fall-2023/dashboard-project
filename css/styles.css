@@ -202,3 +202,8 @@ label{display:block}
     margin: 8px;
   }
 
+
+  /* Add this to your CSS file or in a style tag in the head of your HTML */
+#storedDataSection {
+    border: 2px solid red; /* Add a border to make it visible */
+}
