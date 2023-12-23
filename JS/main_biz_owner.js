@@ -37,18 +37,16 @@ function closeForm() {
       document.getElementById("popup-form").style.display = "none";
   }
 
-  const formData = {
-    name: document.getElementById("nameInput").value,
-    email: document.getElementById("emailInput").value,
-    phoneNumber: document.getElementById("phone-number").value,
-    message: document.getElementById("Message").value,
-    // Add more fields as needed
-};
-
 // Add this function to handle form submission
 function submitForm() {
   // Get form data
-
+  const formData = {
+      name: document.getElementById("nameInput").value,
+      email: document.getElementById("emailInput").value,
+      phoneNumber: document.getElementById("phone-number").value,
+      message: document.getElementById("Message").value,
+      // Add more fields as needed
+  };
 
   // Store form data in localStorage
   localStorage.setItem("formData", JSON.stringify(formData));
